@@ -1,0 +1,32 @@
+{
+    "id": "HelloWorld-mapper",
+    "name": "Hello World Premium New - Incoming Mapper",
+    "type": "mapping-incoming",
+    "description": "Maps incoming Hello World alert fields.",
+    "fromVersion": "6.0.0",
+    "defaultIncidentType": "",
+    "mapping": {
+        "Hello World Premium New Alert": {
+            "dontMapEventToLabels": false,
+            "internalMapping": {
+                "Hello World Premium New ID": {
+                    "complex": null,
+                    "simple": "alert_id"
+                },
+                "Hello World Premium New Status": {
+                    "complex": null,
+                    "simple": "alert_status"
+                },
+                "Hello World Premium New Type": {
+                    "complex": null,
+                    "simple": "alert_type"
+                },
+                "details": {
+                    "complex": null,
+                    "simple": "name"
+                }
+            }
+        }
+    },
+    "version": -1
+}
