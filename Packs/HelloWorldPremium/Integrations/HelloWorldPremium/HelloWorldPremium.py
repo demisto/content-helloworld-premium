@@ -662,7 +662,7 @@ def say_hello_command(client: Client, args: Dict[str, Any]) -> CommandResults:
 
     :return:
         A ``CommandResults`` object that is then passed to ``return_results``,
-        that contains the hello world message
+        that contains the hello world premium message
 
     :rtype: ``CommandResults``
     """
@@ -914,7 +914,7 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
         dbot_score = Common.DBotScore(
             indicator=ip,
             indicator_type=DBotScoreType.IP,
-            integration_name='HelloWorld',
+            integration_name='HelloWorldPremium',
             score=score,
             malicious_description=f'Hello World Premium returned reputation {reputation}'
         )
@@ -930,7 +930,7 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
         ip_standard_list.append(ip_standard_context)
 
         # INTEGRATION DEVELOPER TIP
-        # In the integration specific Context output (HelloWorld.IP) in this
+        # In the integration specific Context output (HelloWorldPremium.IP) in this
         # example you want to provide a lot of information as it can be used
         # programmatically from within Cortex XSOAR in playbooks and commands.
         # On the other hand, this API is way to verbose, so we want to select
@@ -953,11 +953,11 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
     readable_output = tableToMarkdown('IP List', ip_data_list)
 
     # INTEGRATION DEVELOPER TIP
-    # The output key will be ``HelloWorld.IP``, using ``ip`` as the key field.
+    # The output key will be ``HelloWorldPremium.IP``, using ``ip`` as the key field.
     # ``indicators`` is used to provide the context standard (IP)
     return CommandResults(
         readable_output=readable_output,
-        outputs_prefix='HelloWorld.IP',
+        outputs_prefix='HelloWorldPremium.IP',
         outputs_key_field='ip',
         outputs=ip_data_list,
         indicators=ip_standard_list
@@ -1048,7 +1048,7 @@ def domain_reputation_command(client: Client, args: Dict[str, Any], default_thre
 
         dbot_score = Common.DBotScore(
             indicator=domain,
-            integration_name='HelloWorld',
+            integration_name='HelloWorldPremium',
             indicator_type=DBotScoreType.DOMAIN,
             score=score,
             malicious_description=f'Hello World Premium returned reputation {reputation}'
@@ -1078,12 +1078,12 @@ def domain_reputation_command(client: Client, args: Dict[str, Any], default_thre
     readable_output = tableToMarkdown('Domain List', domain_data_list)
 
     # INTEGRATION DEVELOPER TIP
-    # The output key will be ``HelloWorld.Domain``, using ``domain`` as the key
+    # The output key will be ``HelloWorldPremium.Domain``, using ``domain`` as the key
     # field.
     # ``indicators`` is used to provide the context standard (Domain)
     return CommandResults(
         readable_output=readable_output,
-        outputs_prefix='HelloWorld.Domain',
+        outputs_prefix='HelloWorldPremium.Domain',
         outputs_key_field='domain',
         outputs=domain_data_list,
         indicators=domain_standard_list
@@ -1161,7 +1161,7 @@ def search_alerts_command(client: Client, args: Dict[str, Any]) -> CommandResult
     # in this example we are not providing a custom markdown, we will
     # let ``CommandResults`` generate it by default.
     return CommandResults(
-        outputs_prefix='HelloWorld.Alert',
+        outputs_prefix='HelloWorldPremium.Alert',
         outputs_key_field='alert_id',
         outputs=alerts
     )
@@ -1204,7 +1204,7 @@ def get_alert_command(client: Client, args: Dict[str, Any]) -> CommandResults:
 
     return CommandResults(
         readable_output=readable_output,
-        outputs_prefix='HelloWorld.Alert',
+        outputs_prefix='HelloWorldPremium.Alert',
         outputs_key_field='alert_id',
         outputs=alert
     )
@@ -1254,7 +1254,7 @@ def update_alert_status_command(client: Client, args: Dict[str, Any]) -> Command
 
     return CommandResults(
         readable_output=readable_output,
-        outputs_prefix='HelloWorld.Alert',
+        outputs_prefix='HelloWorldPremium.Alert',
         outputs_key_field='alert_id',
         outputs=alert
     )
@@ -1297,7 +1297,7 @@ def scan_start_command(client: Client, args: Dict[str, Any]) -> CommandResults:
 
     return CommandResults(
         readable_output=readable_output,
-        outputs_prefix='HelloWorld.Scan',
+        outputs_prefix='HelloWorldPremium.Scan',
         outputs_key_field='scan_id',
         outputs=scan
     )
@@ -1334,7 +1334,7 @@ def scan_status_command(client: Client, args: Dict[str, Any]) -> CommandResults:
 
     return CommandResults(
         readable_output=readable_output,
-        outputs_prefix='HelloWorld.Scan',
+        outputs_prefix='HelloWorldPremium.Scan',
         outputs_key_field='scan_id',
         outputs=scan_list
     )
@@ -1399,7 +1399,7 @@ def scan_results_command(client: Client, args: Dict[str, Any]) -> Union[Dict[str
         readable_output = tableToMarkdown(f'Scan {scan_id} results', entities)
         return CommandResults(
             readable_output=readable_output,
-            outputs_prefix='HelloWorld.Scan',
+            outputs_prefix='HelloWorldPremium.Scan',
             outputs_key_field='scan_id',
             outputs=results,
             indicators=list(set(cves))  # make the indicator list unique

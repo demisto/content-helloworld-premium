@@ -16,7 +16,7 @@ Unit tests can be checked in 3 ways:
 - From PyCharm
 
 Example with demisto-sdk (from the content root directory):
-demisto-sdk lint -d Packs/HelloWorld/Scripts/HelloWorldScript
+demisto-sdk lint -d Packs/HelloWorld/Scripts/HelloWorldPremiumScript
 
 Coverage
 --------
@@ -39,7 +39,7 @@ Also please check the HelloWorldPremium Integration Unit Tests file.
 
 """
 
-from HelloWorldScript import say_hello, say_hello_command
+from HelloWorldPremiumScript import say_hello, say_hello_command
 
 
 def test_say_hello():
@@ -56,5 +56,5 @@ def test_say_hello_command():
     readable_output, outputs, raw_response = say_hello_command(args)
 
     assert readable_output == '## Hello Dbot'
-    assert outputs['HelloWorld']['hello'] == 'Hello Dbot'
+    assert outputs['HelloWorldPremium']['hello'] == 'Hello Dbot'
     assert raw_response == 'Hello Dbot'

@@ -7,12 +7,12 @@ args:
   secret: false
 comment: Hello World Premium Script
 commonfields:
-  id: HelloWorldScript
+  id: HelloWorldPremiumScript
   version: -1
 enabled: false
-name: HelloWorldScript
+name: HelloWorldPremiumScript
 outputs:
-- contextPath: HelloWorld.hello
+- contextPath: HelloWorldPremium.hello
   description: Should be Hello **something** here.
   type: String
 script: '-'

@@ -75,7 +75,7 @@ def say_hello_command(args: Dict[str, Any]) -> Tuple[str, dict, str]:
 
     markdown = f'## {original_result}'
     outputs = {
-        'HelloWorld': {
+        'HelloWorldPremium': {
             'hello': original_result
         }
     }
@@ -95,7 +95,7 @@ def main():
         return_outputs(*say_hello_command(demisto.args()))
     except Exception as ex:
         demisto.error(traceback.format_exc())  # print the traceback
-        return_error(f'Failed to execute HelloWorldScript. Error: {str(ex)}')
+        return_error(f'Failed to execute HelloWorldPremiumScript. Error: {str(ex)}')
 
 
 ''' ENTRY POINT '''

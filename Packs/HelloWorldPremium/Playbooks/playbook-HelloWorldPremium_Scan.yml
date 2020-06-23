@@ -83,7 +83,7 @@ tasks:
       AdditionalPollingCommandArgNames: {}
       AdditionalPollingCommandArgValues: {}
       Ids:
-        simple: ${HelloWorld.Scan.scan_id}
+        simple: ${HelloWorldPremium.Scan.scan_id}
       Interval:
         simple: ${inputs.Interval}
       PollingCommandArgName:
@@ -93,7 +93,7 @@ tasks:
       Timeout:
         simple: ${inputs.Timeout}
       dt:
-        simple: HelloWorld.Scan(val.status !== 'COMPLETE').scan_id
+        simple: HelloWorldPremium.Scan(val.status !== 'COMPLETE').scan_id
     separatecontext: true
     loop:
       iscommand: false
@@ -126,7 +126,7 @@ tasks:
       format:
         simple: ${inputs.Report Format}
       scan_id:
-        simple: ${HelloWorld.Scan.scan_id}
+        simple: ${HelloWorldPremium.Scan.scan_id}
     separatecontext: false
     view: "{\n  \"position\": {\n    \"x\": 50,\n    \"y\": 720\n  }\n}"
     note: false
@@ -245,15 +245,15 @@ inputs:
   description: How long to wait for the scan to be completed before timing out (minutes)
   playbookInputQuery:
 outputs:
-- contextPath: HelloWorld.Scan.entity.entity-id
+- contextPath: HelloWorldPremium.Scan.entity.entity-id
   description: Scanned entity ID.
-- contextPath: HelloWorld.Scan.entity.ip_address
+- contextPath: HelloWorldPremium.Scan.entity.ip_address
   description: Scanned entity IP address.
-- contextPath: HelloWorld.Scan.entity.type
+- contextPath: HelloWorldPremium.Scan.entity.type
   description: Scanned entity type.
-- contextPath: HelloWorld.Scan.entity.vulnerability_status
+- contextPath: HelloWorldPremium.Scan.entity.vulnerability_status
   description: Scanned entity vulnerability status.
-- contextPath: HelloWorld.Scan.entity.vulns
+- contextPath: HelloWorldPremium.Scan.entity.vulns
   description: Scanned entity CVE.
 - contextPath: CVE.ID
   description: The ID of the CVE.

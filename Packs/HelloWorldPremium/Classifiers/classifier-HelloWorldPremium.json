@@ -1,5 +1,5 @@
 {
-    "id": "HelloWorld",
+    "id": "HelloWorldPremium",
     "name": "Hello World Premium - Classification",
     "type": "classification",
     "description": "Classifies Hello World Premium alerts.",

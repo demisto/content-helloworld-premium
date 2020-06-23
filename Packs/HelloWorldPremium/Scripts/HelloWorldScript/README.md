@@ -20,16 +20,16 @@ Hello World Premium Script
 
 | **Path** | **Description** | **Type** |
 | --- | --- | --- |
-| HelloWorld.hello | Should be Hello \*\*something\*\* here. | String |
+| HelloWorldPremium.hello | Should be Hello \*\*something\*\* here. | String |
 
 
 ## Script Example
-```!HelloWorldScript name=DBot```
+```!HelloWorldPremiumScript name=DBot```
 
 ## Context Example
 ```
 {
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "hello": "Hello DBot"
     }
 }

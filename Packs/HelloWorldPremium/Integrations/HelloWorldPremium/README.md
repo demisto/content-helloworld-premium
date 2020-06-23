@@ -8,7 +8,7 @@ This integration was built to interact with the sample SOAR Hello World Premium 
 ## Configure HelloWorldPremium on Cortex XSOAR
 
 1. Navigate to **Settings** > **Integrations** > **Servers & Services**.
-2. Search for HelloWorld.
+2. Search for HelloWorldPremium.
 3. Click **Add instance** to create and configure a new integration instance.
 
 | **Parameter** | **Description** | **Required** |
@@ -90,12 +90,12 @@ Search HelloWorldPremium Alerts.
 
 | **Path** | **Type** | **Description** |
 | --- | --- | --- |
-| HelloWorld.Alert.alert_id | String | Alert ID. | 
-| HelloWorld.Alert.alert_status | String | Alert status. Can be 'ACTIVE' or 'CLOSED'. | 
-| HelloWorld.Alert.alert_type | String | Alert type. For example 'Bug' or 'Vulnerability'. | 
-| HelloWorld.Alert.created | Date | Alert created time. Format is ISO8601 \(i.e. '2020\-04\-30T10:35:00.000Z'\). | 
-| HelloWorld.Alert.name | String | Alert name. | 
-| HelloWorld.Alert.severity | String | Alert severity. Can be 'Low', 'Medium', 'High' or 'Critical'. | 
+| HelloWorldPremium.Alert.alert_id | String | Alert ID. | 
+| HelloWorldPremium.Alert.alert_status | String | Alert status. Can be 'ACTIVE' or 'CLOSED'. | 
+| HelloWorldPremium.Alert.alert_type | String | Alert type. For example 'Bug' or 'Vulnerability'. | 
+| HelloWorldPremium.Alert.created | Date | Alert created time. Format is ISO8601 \(i.e. '2020\-04\-30T10:35:00.000Z'\). | 
+| HelloWorldPremium.Alert.name | String | Alert name. | 
+| HelloWorldPremium.Alert.severity | String | Alert severity. Can be 'Low', 'Medium', 'High' or 'Critical'. | 
 
 
 #### Command Example
@@ -104,7 +104,7 @@ Search HelloWorldPremium Alerts.
 #### Context Example
 ```
 {
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Alert": [
             {
                 "alert_id": "158cfeb2-84bf-498d-a10d-a55c3445d76e",
@@ -155,13 +155,13 @@ Retrieve alert extra data by ID.
 
 | **Path** | **Type** | **Description** |
 | --- | --- | --- |
-| HelloWorld.Alert.alert_id | String | Alert ID. | 
-| HelloWorld.Alert.created | Date | Alert created time. Format is ISO8601 \(i.e. '2020\-04\-30T10:35:00.000Z'\). | 
-| HelloWorld.Alert.description | String | Alert description. | 
-| HelloWorld.Alert.device_id | String | ID of the device involved in the alert. | 
-| HelloWorld.Alert.device_ip | String | IP Address of the device involved in the alert. | 
-| HelloWorld.Alert.location | String | Location of the device involved in the alert. | 
-| HelloWorld.Alert.user | String | User involved in the alert. | 
+| HelloWorldPremium.Alert.alert_id | String | Alert ID. | 
+| HelloWorldPremium.Alert.created | Date | Alert created time. Format is ISO8601 \(i.e. '2020\-04\-30T10:35:00.000Z'\). | 
+| HelloWorldPremium.Alert.description | String | Alert description. | 
+| HelloWorldPremium.Alert.device_id | String | ID of the device involved in the alert. | 
+| HelloWorldPremium.Alert.device_ip | String | IP Address of the device involved in the alert. | 
+| HelloWorldPremium.Alert.location | String | Location of the device involved in the alert. | 
+| HelloWorldPremium.Alert.user | String | User involved in the alert. | 
 
 
 #### Command Example
@@ -170,7 +170,7 @@ Retrieve alert extra data by ID.
 #### Context Example
 ```
 {
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Alert": {
             "alert_id": "695b3238-05d6-4934-86f5-9fff3201aeb0",
             "created": "2020-05-08T22:21:01.000Z",
@@ -212,9 +212,9 @@ Update the status for an alert.
 
 | **Path** | **Type** | **Description** |
 | --- | --- | --- |
-| HelloWorld.Alert.alert_id | String | Alert ID. | 
-| HelloWorld.Alert.updated | Date | Alert update time. Format is ISO8601 \(i.e. '2020\-04\-30T10:35:00.000Z'\). | 
-| HelloWorld.Alert.alert_status | String | Alert status. Can be 'ACTIVE' or 'CLOSED'. | 
+| HelloWorldPremium.Alert.alert_id | String | Alert ID. | 
+| HelloWorldPremium.Alert.updated | Date | Alert update time. Format is ISO8601 \(i.e. '2020\-04\-30T10:35:00.000Z'\). | 
+| HelloWorldPremium.Alert.alert_status | String | Alert status. Can be 'ACTIVE' or 'CLOSED'. | 
 
 
 #### Command Example
@@ -223,7 +223,7 @@ Update the status for an alert.
 #### Context Example
 ```
 {
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Alert": {
             "alert_id": "695b3238-05d6-4934-86f5-9fff3201aeb0",
             "alert_status": "CLOSED",
@@ -265,36 +265,36 @@ Return IP information and reputation
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the score. | 
-| HelloWorld.IP.asn | String | The autonomous system name for the IP address. | 
-| HelloWorld.IP.asn_cidr | String | The ASN CIDR. | 
-| HelloWorld.IP.asn_country_code | String | The ASN country code. | 
-| HelloWorld.IP.asn_date | Date | The date on which the ASN was assigned. | 
-| HelloWorld.IP.asn_description | String | The ASN description. | 
-| HelloWorld.IP.asn_registry | String | The registry the ASN belongs to. | 
-| HelloWorld.IP.entities | String | Entities associated to the IP. | 
-| HelloWorld.IP.ip | String | The actual IP address. | 
-| HelloWorld.IP.network.cidr | String | Network CIDR for the IP address. | 
-| HelloWorld.IP.network.country | Unknown | The country of the IP address. | 
-| HelloWorld.IP.network.end_address | String | The last IP address of the CIDR. | 
-| HelloWorld.IP.network.events.action | String | The action that happened on the event. | 
-| HelloWorld.IP.network.events.actor | Unknown | The actor that performed the action on the event. | 
-| HelloWorld.IP.network.events.timestamp | String | The timestamp when the event occurred. | 
-| HelloWorld.IP.network.handle | String | The handle of the network. | 
-| HelloWorld.IP.network.ip_version | String | The IP address version. | 
-| HelloWorld.IP.network.links | String | Links associated to the IP address. | 
-| HelloWorld.IP.network.name | String | The name of the network. | 
-| HelloWorld.IP.network.notices.description | String | The description of the notice. | 
-| HelloWorld.IP.network.notices.links | Unknown | Links associated with the notice. | 
-| HelloWorld.IP.network.notices.title | String | Title of the notice. | 
-| HelloWorld.IP.network.parent_handle | String | Handle of the parent network. | 
-| HelloWorld.IP.network.raw | Unknown | Additional raw data for the network. | 
-| HelloWorld.IP.network.remarks | Unknown | Additional remarks for the network. | 
-| HelloWorld.IP.network.start_address | String | The first IP address of the CIDR. | 
-| HelloWorld.IP.network.status | String | Status of the network. | 
-| HelloWorld.IP.network.type | String | The type of the network. | 
-| HelloWorld.IP.query | String | IP address that was queried. | 
-| HelloWorld.IP.raw | Unknown | Additional raw data for the IP address. | 
-| HelloWorld.IP.score | Number | Reputation score from HelloWorldPremium for this IP \(0 to 100, where higher is worse\). | 
+| HelloWorldPremium.IP.asn | String | The autonomous system name for the IP address. | 
+| HelloWorldPremium.IP.asn_cidr | String | The ASN CIDR. | 
+| HelloWorldPremium.IP.asn_country_code | String | The ASN country code. | 
+| HelloWorldPremium.IP.asn_date | Date | The date on which the ASN was assigned. | 
+| HelloWorldPremium.IP.asn_description | String | The ASN description. | 
+| HelloWorldPremium.IP.asn_registry | String | The registry the ASN belongs to. | 
+| HelloWorldPremium.IP.entities | String | Entities associated to the IP. | 
+| HelloWorldPremium.IP.ip | String | The actual IP address. | 
+| HelloWorldPremium.IP.network.cidr | String | Network CIDR for the IP address. | 
+| HelloWorldPremium.IP.network.country | Unknown | The country of the IP address. | 
+| HelloWorldPremium.IP.network.end_address | String | The last IP address of the CIDR. | 
+| HelloWorldPremium.IP.network.events.action | String | The action that happened on the event. | 
+| HelloWorldPremium.IP.network.events.actor | Unknown | The actor that performed the action on the event. | 
+| HelloWorldPremium.IP.network.events.timestamp | String | The timestamp when the event occurred. | 
+| HelloWorldPremium.IP.network.handle | String | The handle of the network. | 
+| HelloWorldPremium.IP.network.ip_version | String | The IP address version. | 
+| HelloWorldPremium.IP.network.links | String | Links associated to the IP address. | 
+| HelloWorldPremium.IP.network.name | String | The name of the network. | 
+| HelloWorldPremium.IP.network.notices.description | String | The description of the notice. | 
+| HelloWorldPremium.IP.network.notices.links | Unknown | Links associated with the notice. | 
+| HelloWorldPremium.IP.network.notices.title | String | Title of the notice. | 
+| HelloWorldPremium.IP.network.parent_handle | String | Handle of the parent network. | 
+| HelloWorldPremium.IP.network.raw | Unknown | Additional raw data for the network. | 
+| HelloWorldPremium.IP.network.remarks | Unknown | Additional remarks for the network. | 
+| HelloWorldPremium.IP.network.start_address | String | The first IP address of the CIDR. | 
+| HelloWorldPremium.IP.network.status | String | Status of the network. | 
+| HelloWorldPremium.IP.network.type | String | The type of the network. | 
+| HelloWorldPremium.IP.query | String | IP address that was queried. | 
+| HelloWorldPremium.IP.raw | Unknown | Additional raw data for the IP address. | 
+| HelloWorldPremium.IP.score | Number | Reputation score from HelloWorldPremium for this IP \(0 to 100, where higher is worse\). | 
 | IP.Address | String | IP address. | 
 | IP.Malicious.Vendor | String | The vendor reporting the IP address as malicious. | 
 | IP.Malicious.Description | String | A description explaining why the IP address was reported as malicious. | 
@@ -311,9 +311,9 @@ Return IP information and reputation
         "Indicator": "8.8.8.8",
         "Score": 2,
         "Type": "ip",
-        "Vendor": "HelloWorld"
+        "Vendor": "HelloWorldPremium"
     },
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "IP": {
             "asn": "15169",
             "asn_cidr": "8.8.8.0/24",
@@ -439,26 +439,26 @@ Returns Domain information and reputation.
 | Domain.WHOIS.ExpirationDate | Date | The expiration date of the domain. | 
 | Domain.WHOIS.Registrar.Name | String | The name of the registrar, for example 'GoDaddy' | 
 | IP.ASN | String | The autonomous system name for the IP address. | 
-| HelloWorld.Domain.address | String | Domain admin address. | 
-| HelloWorld.Domain.city | String | Domain admin city. | 
-| HelloWorld.Domain.country | String | Domain admin country. | 
-| HelloWorld.Domain.creation_date | Date | Domain creation date. Format is ISO8601. | 
-| HelloWorld.Domain.dnssec | String | DNSSEC status. | 
-| HelloWorld.Domain.domain | String | The domain name. | 
-| HelloWorld.Domain.domain_name | String | Domain name options. | 
-| HelloWorld.Domain.emails | String | Contact emails. | 
-| HelloWorld.Domain.expiration_date | Date | Expiration date. Format is ISO8601. | 
-| HelloWorld.Domain.name | String | Domain admin name. | 
-| HelloWorld.Domain.name_servers | String | Name server. | 
-| HelloWorld.Domain.org | String | Domain organization. | 
-| HelloWorld.Domain.referral_url | Unknown | Referral URL. | 
-| HelloWorld.Domain.registrar | String | Domain registrar. | 
-| HelloWorld.Domain.score | Number | Reputation score from HelloWorldPremium for this domain \(0 to 100, where higher is worse\). | 
-| HelloWorld.Domain.state | String | Domain admin state. | 
-| HelloWorld.Domain.status | String | Domain status. | 
-| HelloWorld.Domain.updated_date | Date | Updated date. Format is ISO8601. | 
-| HelloWorld.Domain.whois_server | String | WHOIS server. | 
-| HelloWorld.Domain.zipcode | Unknown | Domain admin zipcode. | 
+| HelloWorldPremium.Domain.address | String | Domain admin address. | 
+| HelloWorldPremium.Domain.city | String | Domain admin city. | 
+| HelloWorldPremium.Domain.country | String | Domain admin country. | 
+| HelloWorldPremium.Domain.creation_date | Date | Domain creation date. Format is ISO8601. | 
+| HelloWorldPremium.Domain.dnssec | String | DNSSEC status. | 
+| HelloWorldPremium.Domain.domain | String | The domain name. | 
+| HelloWorldPremium.Domain.domain_name | String | Domain name options. | 
+| HelloWorldPremium.Domain.emails | String | Contact emails. | 
+| HelloWorldPremium.Domain.expiration_date | Date | Expiration date. Format is ISO8601. | 
+| HelloWorldPremium.Domain.name | String | Domain admin name. | 
+| HelloWorldPremium.Domain.name_servers | String | Name server. | 
+| HelloWorldPremium.Domain.org | String | Domain organization. | 
+| HelloWorldPremium.Domain.referral_url | Unknown | Referral URL. | 
+| HelloWorldPremium.Domain.registrar | String | Domain registrar. | 
+| HelloWorldPremium.Domain.score | Number | Reputation score from HelloWorldPremium for this domain \(0 to 100, where higher is worse\). | 
+| HelloWorldPremium.Domain.state | String | Domain admin state. | 
+| HelloWorldPremium.Domain.status | String | Domain status. | 
+| HelloWorldPremium.Domain.updated_date | Date | Updated date. Format is ISO8601. | 
+| HelloWorldPremium.Domain.whois_server | String | WHOIS server. | 
+| HelloWorldPremium.Domain.zipcode | Unknown | Domain admin zipcode. | 
 
 
 #### Command Example
@@ -471,7 +471,7 @@ Returns Domain information and reputation.
         "Indicator": "demisto.com",
         "Score": 2,
         "Type": "domain",
-        "Vendor": "HelloWorld"
+        "Vendor": "HelloWorldPremium"
     },
     "Domain": {
         "CreationDate": "2015-01-16T21:36:27.000Z",
@@ -527,7 +527,7 @@ Returns Domain information and reputation.
             "UpdatedDate": "2019-05-14T16:14:12.000Z"
         }
     },
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Domain": {
             "address": "P.O. Box 0823-03411",
             "city": "Panama",
@@ -596,9 +596,9 @@ Start scan on an asset.
 
 | **Path** | **Type** | **Description** |
 | --- | --- | --- |
-| HelloWorld.Scan.scan_id | string | Unique ID of the scan. | 
-| HelloWorld.Scan.status | string | Status of the scan \('RUNNING' or 'COMPLETE'\). | 
-| HelloWorld.Scan.hostname | string | The hostname the scan is run against. | 
+| HelloWorldPremium.Scan.scan_id | string | Unique ID of the scan. | 
+| HelloWorldPremium.Scan.status | string | Status of the scan \('RUNNING' or 'COMPLETE'\). | 
+| HelloWorldPremium.Scan.hostname | string | The hostname the scan is run against. | 
 
 
 #### Command Example
@@ -607,7 +607,7 @@ Start scan on an asset.
 #### Context Example
 ```
 {
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Scan": {
             "hostname": "example.com",
             "scan_id": "22cc5dba-9e61-42c6-8355-94527b9815c6",
@@ -640,8 +640,8 @@ Retrieve scan status for one or more scan IDs.
 
 | **Path** | **Type** | **Description** |
 | --- | --- | --- |
-| HelloWorld.Scan.scan_id | string | Unique ID of the scan. | 
-| HelloWorld.Scan.status | string | Status of the scan \('RUNNING' or 'COMPLETE'\). | 
+| HelloWorldPremium.Scan.scan_id | string | Unique ID of the scan. | 
+| HelloWorldPremium.Scan.status | string | Status of the scan \('RUNNING' or 'COMPLETE'\). | 
 
 
 #### Command Example
@@ -650,7 +650,7 @@ Retrieve scan status for one or more scan IDs.
 #### Context Example
 ```
 {
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Scan": {
             "scan_id": "100",
             "status": "COMPLETE"
@@ -687,13 +687,13 @@ Retrieve scan status in Context or as a File (default) for a Scan.
 
 | **Path** | **Type** | **Description** |
 | --- | --- | --- |
-| HelloWorld.Scan.entities.entity-id | String | Scanned entity ID. | 
-| HelloWorld.Scan.entities.ip_address | String | Scanned entity IP address. | 
-| HelloWorld.Scan.entities.type | String | Scanned entity type. | 
-| HelloWorld.Scan.entities.vulnerability_status | String | Scanned entity vulnerability status. | 
-| HelloWorld.Scan.entities.vulns | String | Scanned entity CVE. | 
-| HelloWorld.Scan.scan_id | String | Unique ID of the scan. | 
-| HelloWorld.Scan.status | String | Status of the scan \('RUNNING' or 'COMPLETE'\). | 
+| HelloWorldPremium.Scan.entities.entity-id | String | Scanned entity ID. | 
+| HelloWorldPremium.Scan.entities.ip_address | String | Scanned entity IP address. | 
+| HelloWorldPremium.Scan.entities.type | String | Scanned entity type. | 
+| HelloWorldPremium.Scan.entities.vulnerability_status | String | Scanned entity vulnerability status. | 
+| HelloWorldPremium.Scan.entities.vulns | String | Scanned entity CVE. | 
+| HelloWorldPremium.Scan.scan_id | String | Unique ID of the scan. | 
+| HelloWorldPremium.Scan.status | String | Status of the scan \('RUNNING' or 'COMPLETE'\). | 
 | InfoFile.EntryID | Unknown | The EntryID of the report file. | 
 | InfoFile.Extension | string | The extension of the report file. | 
 | InfoFile.Name | string | The name of the report file. | 
@@ -839,7 +839,7 @@ Retrieve scan status in Context or as a File (default) for a Scan.
             "CVE-2019-3735"
         ]
     },
-    "HelloWorld": {
+    "HelloWorldPremium": {
         "Scan": {
             "entities": [
                 {
