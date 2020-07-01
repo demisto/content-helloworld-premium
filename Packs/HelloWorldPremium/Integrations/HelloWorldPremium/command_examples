@@ -1,0 +1,9 @@
+!helloworldpremium-say-hello name="Hello Dbot"
+!helloworldpremium-scan-start hostname="example.com"
+!helloworldpremium-scan-status scan_id="100"
+!helloworldpremium-scan-results scan_id=100 format=json
+!helloworldpremium-search-alerts severity="Critical" start_time="3 days" max_results=2 status="ACTIVE"
+!helloworldpremium-get-alert alert_id=695b3238-05d6-4934-86f5-9fff3201aeb0
+!helloworldpremium-update-alert-status alert_id=695b3238-05d6-4934-86f5-9fff3201aeb0 status="CLOSED"
+!ip ip="8.8.8.8"
+!domain domain="demisto.com"
