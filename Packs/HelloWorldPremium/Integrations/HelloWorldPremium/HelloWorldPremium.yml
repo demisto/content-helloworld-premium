@@ -17,7 +17,7 @@ configuration:
   required: false
   type: 13
 - defaultvalue: '10'
-  display: Maximum number of incidents per fetch test test test
+  display: Maximum number of incidents per fetch interval
   name: max_fetch
   required: false
   type: 0
