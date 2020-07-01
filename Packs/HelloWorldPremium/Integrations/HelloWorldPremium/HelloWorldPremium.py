@@ -466,7 +466,7 @@ class Client(BaseClient):
         :rtype: ``str``
         """
 
-        return f'Hello {name}'
+        return f'Hello Test {name}'
 
 
 ''' HELPER FUNCTIONS '''
