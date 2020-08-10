@@ -17,7 +17,7 @@ configuration:
   required: false
   type: 13
 - defaultvalue: '10'
-  display: Maximum number of incidents per fetch interval
+  display: Maximum number of incidents per fetch
   name: max_fetch
   required: false
   type: 0
@@ -587,5 +587,5 @@ script:
   script: '-'
   subtype: python3
   type: python
-defaultClassifier: HelloWorldPremium
-defaultMapperIn: HelloWorldPremium-mapper
+defaultclassifier: HelloWorldPremium
+defaultmapperin: HelloWorldPremium-mapper
