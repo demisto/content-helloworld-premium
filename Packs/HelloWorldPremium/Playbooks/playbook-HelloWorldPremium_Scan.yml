@@ -12,10 +12,10 @@ starttaskid: '0'
 tasks:
   '0':
     id: '0'
-    taskid: dafe8c51-8798-4472-8b0d-b9cfc1b1b613
+    taskid: dafe8c51-8798-4472-8b0d-b9cfc1b1b614
     type: start
     task:
-      id: dafe8c51-8798-4472-8b0d-b9cfc1b1b613
+      id: dafe8c51-8798-4472-8b0d-b9cfc1b1b614
       version: -1
       name: ''
       iscommand: false
@@ -33,10 +33,10 @@ tasks:
     quietmode: 0
   '1':
     id: '1'
-    taskid: 6b00143b-8523-4436-8950-adfd73869e64
+    taskid: 6b00143b-8523-4436-8950-adfd73869e65
     type: regular
     task:
-      id: 6b00143b-8523-4436-8950-adfd73869e64
+      id: 6b00143b-8523-4436-8950-adfd73869e65
       version: -1
       name: Start a Hello World Premium Scan
       description: Start a HelloWorldPremium scan on an asset, identified from by ${input.Hostname}
@@ -60,10 +60,10 @@ tasks:
     quietmode: 0
   '2':
     id: '2'
-    taskid: 658053d1-8d16-45b8-8241-f0e0f1f9d982
+    taskid: 658053d1-8d16-45b8-8241-f0e0f1f9d983
     type: playbook
     task:
-      id: 658053d1-8d16-45b8-8241-f0e0f1f9d982
+      id: 658053d1-8d16-45b8-8241-f0e0f1f9d983
       version: -1
       name: GenericPolling
       description: "Use this playbook as a sub-playbook to block execution of the\
@@ -108,10 +108,10 @@ tasks:
     quietmode: 0
   '3':
     id: '3'
-    taskid: 48a7dfde-e420-48b7-8a04-59f423ee4e52
+    taskid: 48a7dfde-e420-48b7-8a04-59f423ee4e53
     type: regular
     task:
-      id: 48a7dfde-e420-48b7-8a04-59f423ee4e52
+      id: 48a7dfde-e420-48b7-8a04-59f423ee4e53
       version: -1
       name: Retrieve HelloWorldPremium Scan Results
       description: Retrieve scan status in Context or as a File (default) for a Scan.
@@ -136,10 +136,10 @@ tasks:
     quietmode: 0
   '4':
     id: '4'
-    taskid: 480e9af4-1e53-4351-8a6e-3e0d9a369cc0
+    taskid: 480e9af4-1e53-4351-8a6e-3e0d9a369cc1
     type: title
     task:
-      id: 480e9af4-1e53-4351-8a6e-3e0d9a369cc0
+      id: 480e9af4-1e53-4351-8a6e-3e0d9a369cc1
       version: -1
       name: Done
       type: title
@@ -155,10 +155,10 @@ tasks:
     quietmode: 0
   '5':
     id: '5'
-    taskid: 0449752f-d12c-45e8-8bb9-1465da7e57f7
+    taskid: 0449752f-d12c-45e8-8bb9-1465da7e57f8
     type: condition
     task:
-      id: 0449752f-d12c-45e8-8bb9-1465da7e57f7
+      id: 0449752f-d12c-45e8-8bb9-1465da7e57f8
       version: -1
       name: Is Hostname set?
       description: Check if the input Hostname is valid (i.e. is not Empty), do not
@@ -188,10 +188,10 @@ tasks:
     quietmode: 0
   '6':
     id: '6'
-    taskid: 77b84196-1f07-4013-8f31-863e7315d3b4
+    taskid: 77b84196-1f07-4013-8f31-863e7315d3b5
     type: regular
     task:
-      id: 77b84196-1f07-4013-8f31-863e7315d3b4
+      id: 77b84196-1f07-4013-8f31-863e7315d3b5
       version: -1
       name: Print Error
       description: Prints an error entry with a given message
