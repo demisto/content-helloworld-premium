@@ -23,7 +23,7 @@ import demistomock as demisto
 from CommonServerPython import *
 from CommonServerUserPython import *
 
-from typing import Dict, Any, Tuple
+from typing import Dict, Any
 import traceback
 
 
@@ -46,8 +46,8 @@ def say_hello(name: str) -> str:
 ''' COMMAND FUNCTION '''
 
 
-def say_hello_command(args: Dict[str, Any]) -> Tuple[str, dict, str]:
-    """helloworldpremium-say-hello command: Returns Hello {somename}
+def say_hello_command(args: Dict[str, Any]) -> CommandResults:
+    """helloworldPremium-say-hello command: Returns Hello {somename}
 
     :type args: ``str``
     :param args:
@@ -55,18 +55,12 @@ def say_hello_command(args: Dict[str, Any]) -> Tuple[str, dict, str]:
         ``args['name']`` is used as input name
 
     :return:
-        A tuple containing three elements that is then passed to ``return_outputs``:
-            readable_output (``str``): This will be presented in the war room
-                    should be in markdown syntax - human readable
-            outputs (``dict``): Dictionary/JSON - saved in the incident context in order
-                    to be used as inputs for other tasks in the playbook
-            raw_response (``str``): Used for debugging/troubleshooting purposes
-                    will be shown only if the command executed with ``raw-response=true``
+        CommandResults with output context and human readable string.
 
-    :rtype: ``Tuple[str, dict, str]``
+    :rtype: ``CommandResults``
     """
 
-    # Check the HelloWorldPremium comments from the HelloWorldPremium Integration
+    # Check the HelloWorld comments from the HelloWorld Integration
     # as the command "say_hello_command" is the same.
 
     name = args.get('name', None)
@@ -80,10 +74,10 @@ def say_hello_command(args: Dict[str, Any]) -> Tuple[str, dict, str]:
         }
     }
 
-    return (
-        markdown,
-        outputs,
-        original_result
+    return CommandResults(
+        readable_output=markdown,
+        outputs=outputs,
+        outputs_key_field=None
     )
 
 
@@ -92,7 +86,7 @@ def say_hello_command(args: Dict[str, Any]) -> Tuple[str, dict, str]:
 
 def main():
     try:
-        return_outputs(*say_hello_command(demisto.args()))
+        return_results(say_hello_command(demisto.args()))
     except Exception as ex:
         demisto.error(traceback.format_exc())  # print the traceback
         return_error(f'Failed to execute HelloWorldPremiumScript. Error: {str(ex)}')
