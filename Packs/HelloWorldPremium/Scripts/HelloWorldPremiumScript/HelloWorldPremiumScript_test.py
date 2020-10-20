@@ -56,7 +56,7 @@ def test_say_hello_command():
     response = say_hello_command(args)
 
     assert response.outputs == {
-        'HelloWorld': {
+        'HelloWorldPremium': {
             'hello': 'Hello Dbot'
         }
     }
