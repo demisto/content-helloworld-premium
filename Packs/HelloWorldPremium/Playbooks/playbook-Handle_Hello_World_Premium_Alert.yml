@@ -1,21 +1,20 @@
 id: Handle Hello World Premium Alert
 version: -1
+vcShouldKeepItemLegacyProdMachine: false
 name: Handle Hello World Premium Alert
-description: This is a playbook which will handle the alerts coming from the Hello World Premium
-  service
+description: This is a playbook which will handle the alerts coming from the Hello
+  World Premium service
 starttaskid: "0"
-fromversion: 5.0.0
 tasks:
   "0":
     id: "0"
-    taskid: "1"
+    taskid: a3fa6343-393c-4446-88ec-cf5678c98979
     type: start
     task:
-      id: "1"
+      id: a3fa6343-393c-4446-88ec-cf5678c98979
       version: -1
       name: ""
       iscommand: false
-      description: ''
       brand: ""
     nexttasks:
       '#none#':
@@ -35,10 +34,10 @@ tasks:
     quietmode: 0
   "1":
     id: "1"
-    taskid: 7a16e30b-cd8b-45ce-81cd-b19f9c603dc0
+    taskid: 1b6ff550-bde1-431d-88d9-3f2b62b15bdb
     type: regular
     task:
-      id: 7a16e30b-cd8b-45ce-81cd-b19f9c603dc0
+      id: 1b6ff550-bde1-431d-88d9-3f2b62b15bdb
       version: -1
       name: Get alert details
       description: Retrieve alert details for a HelloWorldPremium alert by alert ID
@@ -79,8 +78,7 @@ inputs:
   value:
     simple: ${incident.helloworldpremiumid}
   required: false
-  description: "Alert ID to retrieve details for. By default retrieves from the HelloWorldPremium ID custom field in the HelloWorldPremium incident type"
+  description: Alert ID to retrieve details for. By default retrieves from the HelloWorldPremium
+    ID custom field in the HelloWorldPremium incident type
   playbookInputQuery: null
 outputs: []
-tests:
-- No tests

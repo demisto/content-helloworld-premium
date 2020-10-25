@@ -1,16 +1,16 @@
 id: HelloWorldPremium-Test
 version: -1
 name: HelloWorldPremium-Test
-description: 'HelloWorldPremium Test Playbook - for documentation on how to write test playbooks
-  please refer to: https://xsoar.pan.dev/docs/integrations/test-playbooks'
+description: 'HelloWorldPremium Test Playbook - for documentation on how to write
+  test playbooks please refer to: https://xsoar.pan.dev/docs/integrations/test-playbooks'
 starttaskid: "0"
 tasks:
   "0":
     id: "0"
-    taskid: 25948550-f801-4c24-8ed0-7e13e442caf2
+    taskid: 51e0fdd9-b131-431c-8314-e165c46d0bb2
     type: start
     task:
-      id: 25948550-f801-4c24-8ed0-7e13e442caf2
+      id: 51e0fdd9-b131-431c-8314-e165c46d0bb2
       version: -1
       name: ""
       iscommand: false
@@ -31,12 +31,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '1':
-    id: '1'
-    taskid: b34a59a5-58c9-48f1-8584-56eb3b57cbcb
+  "1":
+    id: "1"
+    taskid: 1d9f6510-2d6f-41b4-88a9-d6fe100e8a1a
     type: regular
     task:
-      id: 2122a718-2b32-432a-83bc-3d7e4f7b6402
+      id: 1d9f6510-2d6f-41b4-88a9-d6fe100e8a1a
       version: -1
       name: DeleteContext
       description: Delete All the Context
@@ -67,16 +67,16 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '2':
-    id: '2'
-    taskid: d6b71f5e-face-4121-827a-19ef7b93988a
+  "2":
+    id: "2"
+    taskid: 7a78cdbd-76b4-47f3-82bb-be7e8176d653
     type: regular
     task:
-      id: 5d1ef6fb-8008-41e3-8201-d87f51883140
+      id: 7a78cdbd-76b4-47f3-82bb-be7e8176d653
       version: -1
       name: helloworldpremium-say-hello
-      description: Run the helloworldpremium-say-hello-command with argument name set to
-        "Dbot"
+      description: Run the helloworldpremium-say-hello-command with argument name
+        set to "Dbot"
       script: '|||helloworldpremium-say-hello'
       type: regular
       iscommand: true
@@ -100,12 +100,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '3':
-    id: '3'
-    taskid: 67e09be1-fbf9-4e5a-887c-1d7c6cea9e32
+  "3":
+    id: "3"
+    taskid: fc2d9ec5-b905-4eca-84ec-59493bd54a92
     type: condition
     task:
-      id: f93dd5e2-8858-4856-8665-c61094a71d6b
+      id: fc2d9ec5-b905-4eca-84ec-59493bd54a92
       version: -1
       name: Verify Outputs
       description: Verify the outputs.
@@ -139,12 +139,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '4':
-    id: '4'
-    taskid: 7295fed6-0f14-4e7a-849e-fe7dcb1f2865
+  "4":
+    id: "4"
+    taskid: b1e22e93-cb3e-4c28-8c3c-a8356a0f92c5
     type: regular
     task:
-      id: 38e75aa5-4465-4341-85bf-e70f2bb59b2a
+      id: b1e22e93-cb3e-4c28-8c3c-a8356a0f92c5
       version: -1
       name: helloworldpremium-search-alerts
       description: Run the helloworldpremium-search-alerts command to find an alert
@@ -179,12 +179,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '5':
-    id: '5'
-    taskid: dc2cf36f-5280-4434-8d28-4e640620796e
+  "5":
+    id: "5"
+    taskid: 535fec9a-025d-4cc6-8d90-4629a67bbb22
     type: condition
     task:
-      id: 169fead7-9454-42b2-8687-b89d8653ace1
+      id: 535fec9a-025d-4cc6-8d90-4629a67bbb22
       version: -1
       name: Verify Outputs
       description: Check if an alert of type Bug and severity 4 (Critical) is found
@@ -249,12 +249,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '6':
-    id: '6'
-    taskid: f4d2d479-cd8f-4b23-8cf8-536fe941f534
+  "6":
+    id: "6"
+    taskid: 89b3d881-21e2-4dbc-8749-33f612c0999b
     type: regular
     task:
-      id: bbe76529-7e20-4065-891e-49151f124768
+      id: 89b3d881-21e2-4dbc-8749-33f612c0999b
       version: -1
       name: helloworldpremium-get-alert
       description: Get the alert details for the alert retrieved in the previous task
@@ -283,12 +283,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '7':
-    id: '7'
-    taskid: 589584a9-a37b-4d26-8a09-097db10dbabd
+  "7":
+    id: "7"
+    taskid: 9d7966ee-a557-4285-8e0a-d9097f539643
     type: condition
     task:
-      id: c5d95e0f-1d5f-4d83-8ea2-71d3b9e5bbba
+      id: 9d7966ee-a557-4285-8e0a-d9097f539643
       version: -1
       name: Verify Outputs
       description: Check if all the alert detail fields are present
@@ -349,12 +349,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '8':
-    id: '8'
-    taskid: f3165fc4-5a55-4ba9-8855-2a8c5b4308bc
+  "8":
+    id: "8"
+    taskid: 1feeff82-825f-4be0-89e0-29dd4b67fe40
     type: regular
     task:
-      id: 712871b9-10fe-4147-839f-0cac5e580bb2
+      id: 1feeff82-825f-4be0-89e0-29dd4b67fe40
       version: -1
       name: helloworldpremium-update-alert-status
       description: Change the previous alert status to CLOSED using helloworldpremium-update-alert-status
@@ -385,12 +385,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '9':
-    id: '9'
-    taskid: c87b60c1-56ca-4a09-8a31-2fd419ea65e0
+  "9":
+    id: "9"
+    taskid: 2ffb2e69-34db-421e-8ed5-25497a7a3469
     type: condition
     task:
-      id: ee538f4b-8ff1-4d13-8f96-7fc152d92b90
+      id: 2ffb2e69-34db-421e-8ed5-25497a7a3469
       version: -1
       name: Verify Outputs
       description: Check if the alert has been closed correctly
@@ -434,12 +434,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '10':
-    id: '10'
-    taskid: 3c54dcc4-8159-46e9-8465-bcc902e475e0
+  "10":
+    id: "10"
+    taskid: c76fa624-c4eb-420f-8152-ba966c75b4cd
     type: regular
     task:
-      id: 95845d01-dd35-48a9-8753-7410d6ea1159
+      id: c76fa624-c4eb-420f-8152-ba966c75b4cd
       version: -1
       name: ip
       description: Get ip reputation for ip '8.8.8.8'
@@ -467,12 +467,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '11':
-    id: '11'
-    taskid: e538c67c-ac6f-49c4-8272-1ddc3ad4b390
+  "11":
+    id: "11"
+    taskid: c7c1f72a-0374-4696-8ec8-7d8c68233f5f
     type: condition
     task:
-      id: e538c67c-ac6f-49c4-8272-1ddc3ad4b390
+      id: c7c1f72a-0374-4696-8ec8-7d8c68233f5f
       version: -1
       name: Verify Outputs
       description: Check if the ip command returns accurate data
@@ -598,12 +598,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '12':
-    id: '12'
-    taskid: 525a0a92-d574-4102-8e69-127d5c865d8f
+  "12":
+    id: "12"
+    taskid: c7c02cb5-0cd3-4d71-882d-e87fb9fd46c3
     type: regular
     task:
-      id: e6834117-828b-4c4c-8dc3-480e1365e676
+      id: c7c02cb5-0cd3-4d71-882d-e87fb9fd46c3
       version: -1
       name: domain
       description: Run the domain command for domain 'google.com'
@@ -631,12 +631,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '13':
-    id: '13'
-    taskid: 81a21c35-f705-49e6-8a3d-2dbdc2ba70dc
+  "13":
+    id: "13"
+    taskid: 414519f2-742d-43f7-8a85-d8bd1c737697
     type: condition
     task:
-      id: 81a21c35-f705-49e6-8a3d-2dbdc2ba70dc
+      id: 414519f2-742d-43f7-8a85-d8bd1c737697
       version: -1
       name: Verify Outputs
       type: condition
@@ -781,12 +781,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '14':
-    id: '14'
-    taskid: 5dfe5e6f-cc7c-4332-828d-4d37c65172d5
+  "14":
+    id: "14"
+    taskid: 1bd41523-e74c-4926-8e3c-aee3a5037e8d
     type: regular
     task:
-      id: d6b55d6b-0d5a-4d20-8632-ef5dd28250da
+      id: 1bd41523-e74c-4926-8e3c-aee3a5037e8d
       version: -1
       name: helloworldpremium-scan-start
       description: Run scan on hostname 'testhost123.local'
@@ -813,12 +813,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '15':
-    id: '15'
-    taskid: 054a8d86-7547-4ff6-8f0e-5bf742fd15fb
+  "15":
+    id: "15"
+    taskid: 81ee1292-5b0a-4715-86b9-5837d71dba82
     type: condition
     task:
-      id: c772453e-eefe-4364-8a72-881d58d0ca30
+      id: 81ee1292-5b0a-4715-86b9-5837d71dba82
       version: -1
       name: Verify Outputs
       description: Verify details of the domain
@@ -865,12 +865,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '16':
-    id: '16'
-    taskid: 5b32f105-df4d-4a9c-85d0-2614ccd8ca42
+  "16":
+    id: "16"
+    taskid: a889b81b-ee4f-4347-8faf-2757efb0934c
     type: regular
     task:
-      id: dc8e6fec-508c-4efb-8fe0-73564be6597d
+      id: a889b81b-ee4f-4347-8faf-2757efb0934c
       version: -1
       name: helloworldpremium-scan-status
       description: Test the scan status
@@ -899,12 +899,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '17':
-    id: '17'
-    taskid: f9302457-2994-4212-8648-3c852e9c6ddb
+  "17":
+    id: "17"
+    taskid: 0e2e2977-3b2c-4f8f-899d-a4f280e80d7b
     type: condition
     task:
-      id: 37480436-4e91-4497-8e90-6ca2f14696da
+      id: 0e2e2977-3b2c-4f8f-899d-a4f280e80d7b
       version: -1
       name: Verify Outputs
       description: Check if the scan is either running or complete
@@ -943,12 +943,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '18':
-    id: '18'
-    taskid: 8f3bddfa-41fb-4c2b-8fae-0b138e96a528
+  "18":
+    id: "18"
+    taskid: 80284041-8bb6-4094-88b4-82415b7a0e65
     type: regular
     task:
-      id: 4a0f4ff9-00a9-41ca-8ec1-683fbfabf812
+      id: 80284041-8bb6-4094-88b4-82415b7a0e65
       version: -1
       name: helloworldpremium-scan-results
       description: Retrieve the scan results in json format
@@ -979,12 +979,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '19':
-    id: '19'
-    taskid: 8a327593-301f-4c00-81e6-971d391c480e
+  "19":
+    id: "19"
+    taskid: d7c6752d-6174-4002-8509-7a741fff9684
     type: condition
     task:
-      id: e8785c8e-1f79-4811-85da-576e26d80d4c
+      id: d7c6752d-6174-4002-8509-7a741fff9684
       version: -1
       name: Verify Outputs
       type: condition
@@ -1052,12 +1052,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '20':
-    id: '20'
-    taskid: f9f6da2b-a8bc-413e-894f-2a871980b69b
+  "20":
+    id: "20"
+    taskid: b038c798-aad8-4bff-89a9-1efc5cc58b18
     type: title
     task:
-      id: 622aa9af-b866-4f3f-80d3-8f48faa2be92
+      id: b038c798-aad8-4bff-89a9-1efc5cc58b18
       version: -1
       name: Test Done
       type: title
@@ -1076,12 +1076,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '21':
-    id: '21'
-    taskid: d13cda5f-dc63-4d0e-8fe4-29fba01be349
+  "21":
+    id: "21"
+    taskid: 7e4214fe-3912-41c1-819c-3c51c6306d35
     type: regular
     task:
-      id: 0edc461b-f2e3-43ad-8aa9-1105209b5d0c
+      id: 7e4214fe-3912-41c1-819c-3c51c6306d35
       version: -1
       name: Test Fetch Incidents
       description: Execute FetchIncident for a given instance. We get the instance
@@ -1113,12 +1113,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '22':
-    id: '22'
-    taskid: a4189d6f-9d63-462d-8dbb-d89167f1674e
+  "22":
+    id: "22"
+    taskid: 7778ec78-e35c-4f1d-8920-83ca46452bb2
     type: regular
     task:
-      id: f95dd550-4b57-43da-8579-21ba63024a83
+      id: 7778ec78-e35c-4f1d-8920-83ca46452bb2
       version: -1
       name: DeleteContext
       description: Delete Context to make sure the DBotScore is not tainted from the
@@ -1150,12 +1150,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '23':
-    id: '23'
-    taskid: cfc6b8da-4112-4bf8-88be-7fd8256c2d2c
+  "23":
+    id: "23"
+    taskid: 700bc441-4233-464c-8db9-f496d7baa6e1
     type: regular
     task:
-      id: 4636d19d-d546-4548-838a-ec5e3f0b6042
+      id: 700bc441-4233-464c-8db9-f496d7baa6e1
       version: -1
       name: DeleteContext
       description: Clean up the Context
@@ -1186,12 +1186,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '24':
-    id: '24'
-    taskid: c994f1eb-924e-47ee-855c-0296feb00c7a
+  "24":
+    id: "24"
+    taskid: 208b1390-a9c5-42a7-8a87-4ed304734ab2
     type: regular
     task:
-      id: b7d3f025-3f95-44fd-8e65-36bf0252d313
+      id: 208b1390-a9c5-42a7-8a87-4ed304734ab2
       version: -1
       name: DeleteContext
       description: Clean up the Context
@@ -1222,12 +1222,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '25':
-    id: '25'
-    taskid: 4067ad88-8785-4086-8d52-e8bf11bb4e2e
+  "25":
+    id: "25"
+    taskid: b074841f-4221-4ff5-8098-96e0cbbbd3a2
     type: title
     task:
-      id: 744f9fef-58f4-407a-848e-f8f76037e08f
+      id: b074841f-4221-4ff5-8098-96e0cbbbd3a2
       version: -1
       name: Test Fetch Incidents
       type: title
@@ -1249,12 +1249,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '26':
-    id: '26'
-    taskid: 8602c926-bf4a-40e4-8768-89ebc295debf
+  "26":
+    id: "26"
+    taskid: 9df16629-4860-4c68-85d7-279b93f88df5
     type: title
     task:
-      id: 82dcce73-2159-4cc1-8267-2af37f6e4266
+      id: 9df16629-4860-4c68-85d7-279b93f88df5
       version: -1
       name: Test Automation Script
       type: title
@@ -1276,16 +1276,16 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '27':
-    id: '27'
-    taskid: 30ed9a4b-3dea-4205-8f0f-3425ada73ee0
+  "27":
+    id: "27"
+    taskid: bb8f54f7-c200-4aaf-8143-605438d73636
     type: regular
     task:
-      id: dfefce7b-7db8-4192-8d3e-373a64f9cc0e
+      id: bb8f54f7-c200-4aaf-8143-605438d73636
       version: -1
       name: HelloWorldPremiumScript
       description: Run HelloWorldPremiumScript with "Dbot" as argument
-      scriptName: HelloWorldPremiumScript
+      script: HelloWorldPremiumScript
       type: regular
       iscommand: false
       brand: ""
@@ -1308,12 +1308,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '28':
-    id: '28'
-    taskid: a878966e-5471-45d7-8edb-ed0d907f7cdf
+  "28":
+    id: "28"
+    taskid: 12a17eb2-7660-47a6-82d2-da3b65346f86
     type: condition
     task:
-      id: f7c06100-f2cd-407b-8f66-1538027bc209
+      id: 12a17eb2-7660-47a6-82d2-da3b65346f86
       version: -1
       name: Verify Outputs
       description: Verify output from script
@@ -1347,12 +1347,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '29':
-    id: '29'
-    taskid: 99e3e0d6-acd3-428e-8521-2ccbff1b635c
+  "29":
+    id: "29"
+    taskid: eb23b066-5419-4393-8aee-f164b3f5dc1c
     type: title
     task:
-      id: 6d74227c-b219-4baf-8d3d-1045e335c6b7
+      id: eb23b066-5419-4393-8aee-f164b3f5dc1c
       version: -1
       name: Test Scan Commands
       type: title
@@ -1374,12 +1374,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '30':
-    id: '30'
-    taskid: 09cfb854-2da7-4a8f-85b6-814b8d5fa170
+  "30":
+    id: "30"
+    taskid: ca926607-58a2-4df5-89b0-263eb21a5f2b
     type: title
     task:
-      id: 4f3d9db2-fbef-424f-8c87-4fa15b747624
+      id: ca926607-58a2-4df5-89b0-263eb21a5f2b
       version: -1
       name: Test Reputation Commands
       type: title
@@ -1401,12 +1401,12 @@ tasks:
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '31':
-    id: '31'
-    taskid: 7a13fcb9-8dfc-47e6-85d2-1b4b6de7f90d
+  "31":
+    id: "31"
+    taskid: 6c7ef7a2-6746-469a-85e3-c8ef8b886477
     type: title
     task:
-      id: 27f17dd5-e184-4366-81f3-a947f13d145e
+      id: 6c7ef7a2-6746-469a-85e3-c8ef8b886477
       version: -1
       name: Test Alert Commands
       type: title
@@ -1426,6 +1426,8 @@ tasks:
     note: false
     timertriggers: []
     ignoreworker: false
+    skipunavailable: false
+    quietmode: 0
 view: |-
   {
     "linkLabelsPosition": {},
@@ -1440,4 +1442,3 @@ view: |-
   }
 inputs: []
 outputs: []
-fromversion: 5.0.0

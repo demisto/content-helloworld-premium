@@ -9,15 +9,14 @@ starttaskid: "0"
 tasks:
   "0":
     id: "0"
-    taskid: e2b99a8f-4096-43fa-8a6c-c9e7a9fefb90
+    taskid: 522f3240-d395-42f4-87cc-f4d9590a1238
     type: start
     task:
-      id: e2b99a8f-4096-43fa-8a6c-c9e7a9fefb90
+      id: 522f3240-d395-42f4-87cc-f4d9590a1238
       version: -1
       name: ""
       iscommand: false
       brand: ""
-      description: ''
     nexttasks:
       '#none#':
       - "5"
@@ -36,10 +35,10 @@ tasks:
     quietmode: 0
   "1":
     id: "1"
-    taskid: 8cf34007-6e6f-43e8-875e-b761ce95b092
+    taskid: 3fa89287-cf9c-4571-86bb-f9c5bf8e08c5
     type: regular
     task:
-      id: 8cf34007-6e6f-43e8-875e-b761ce95b092
+      id: 3fa89287-cf9c-4571-86bb-f9c5bf8e08c5
       version: -1
       name: Start a Hello World Premium Scan
       description: Start a HelloWorldPremium scan on an asset, identified from by
@@ -69,10 +68,10 @@ tasks:
     quietmode: 0
   "2":
     id: "2"
-    taskid: 2a96be24-7bbd-41a7-86ab-1fde7b2403e5
+    taskid: 32b046ff-d790-4fb6-8d0f-5279cc510085
     type: playbook
     task:
-      id: 2a96be24-7bbd-41a7-86ab-1fde7b2403e5
+      id: 32b046ff-d790-4fb6-8d0f-5279cc510085
       version: -1
       name: GenericPolling
       description: |-
@@ -125,10 +124,10 @@ tasks:
     quietmode: 0
   "3":
     id: "3"
-    taskid: 0cb81d32-ceab-4cf6-82da-363247181f8e
+    taskid: 077e5ee2-9cb5-4793-8709-ec9f7b75fe9c
     type: regular
     task:
-      id: 0cb81d32-ceab-4cf6-82da-363247181f8e
+      id: 077e5ee2-9cb5-4793-8709-ec9f7b75fe9c
       version: -1
       name: Retrieve HelloWorldPremium Scan Results
       description: Retrieve scan status in Context or as a File (default) for a Scan.
@@ -159,16 +158,15 @@ tasks:
     quietmode: 0
   "4":
     id: "4"
-    taskid: 5e1a7435-601a-445a-83dd-368f5227d4f5
+    taskid: a5db0b17-5bd0-4ad8-8e94-0792f73abdb4
     type: title
     task:
-      id: 5e1a7435-601a-445a-83dd-368f5227d4f5
+      id: a5db0b17-5bd0-4ad8-8e94-0792f73abdb4
       version: -1
       name: Done
       type: title
       iscommand: false
       brand: ""
-      description: ''
     separatecontext: false
     view: |-
       {
@@ -184,10 +182,10 @@ tasks:
     quietmode: 0
   "5":
     id: "5"
-    taskid: 619eeca1-ae83-4889-8150-328517a630ad
+    taskid: b57d39ad-21ca-4a07-8f35-dfe5a978ea3a
     type: condition
     task:
-      id: 619eeca1-ae83-4889-8150-328517a630ad
+      id: b57d39ad-21ca-4a07-8f35-dfe5a978ea3a
       version: -1
       name: Is Hostname set?
       description: Check if the input Hostname is valid (i.e. is not Empty), do not
@@ -223,10 +221,10 @@ tasks:
     quietmode: 0
   "6":
     id: "6"
-    taskid: 832ff0af-b30c-49b3-8f2a-9e55261913c7
+    taskid: 2f5cf35e-134d-4ffa-806a-6a3f166c0b4d
     type: regular
     task:
-      id: 832ff0af-b30c-49b3-8f2a-9e55261913c7
+      id: 2f5cf35e-134d-4ffa-806a-6a3f166c0b4d
       version: -1
       name: Print Error
       description: Prints an error entry with a given message
@@ -274,26 +272,26 @@ inputs:
   required: true
   description: Hostname to run the scan against. By default takes ${Endpoint.Hostname}
     from the context as the input.
-  playbookInputQuery:
+  playbookInputQuery: null
 - key: Report Format
   value:
     simple: json
   required: true
   description: 'Output report format: can be "json" (output parsed and written in
     the Context) or "file" (saved as an attachment). By default is "json".'
-  playbookInputQuery:
+  playbookInputQuery: null
 - key: Interval
   value:
     simple: "1"
   required: true
   description: How often to check for the scan to be completed (minutes)
-  playbookInputQuery:
+  playbookInputQuery: null
 - key: Timeout
   value:
     simple: "15"
   required: true
   description: How long to wait for the scan to be completed before timing out (minutes)
-  playbookInputQuery:
+  playbookInputQuery: null
 outputs:
 - contextPath: HelloWorldPremium.Scan.entity.entity-id
   description: Scanned entity ID.
@@ -319,6 +317,3 @@ outputs:
   description: The size of the report file.
 - contextPath: InfoFile.Type
   description: The type of the report file.
-fromversion: 5.0.0
-tests:
-- No tests
