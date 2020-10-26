@@ -320,3 +320,5 @@ outputs:
   description: The size of the report file.
 - contextPath: InfoFile.Type
   description: The type of the report file.
+tests:
+ -  No tests
