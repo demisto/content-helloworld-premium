@@ -83,3 +83,5 @@ inputs:
     ID custom field in the HelloWorldPremium incident type
   playbookInputQuery: null
 outputs: []
+tests:
+ -  No tests
