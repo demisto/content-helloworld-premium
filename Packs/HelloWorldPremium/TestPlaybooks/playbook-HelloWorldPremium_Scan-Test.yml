@@ -3,6 +3,7 @@ version: -1
 name: HelloWorldPremium_Scan-Test
 description: Test Playbook for HelloWorldPremium Scan
 starttaskid: "0"
+fromversion: 5.0.0
 tasks:
   "0":
     id: "0"

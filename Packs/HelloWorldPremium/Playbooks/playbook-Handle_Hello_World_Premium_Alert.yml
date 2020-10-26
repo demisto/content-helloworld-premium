@@ -1,9 +1,9 @@
 id: Handle Hello World Premium Alert
 version: -1
-vcShouldKeepItemLegacyProdMachine: false
 name: Handle Hello World Premium Alert
 description: This is a playbook which will handle the alerts coming from the Hello
   World Premium service
+fromversion: 5.0.0
 starttaskid: "0"
 tasks:
   "0":
@@ -14,6 +14,7 @@ tasks:
       id: a3fa6343-393c-4446-88ec-cf5678c98979
       version: -1
       name: ""
+      description: ''
       iscommand: false
       brand: ""
     nexttasks:

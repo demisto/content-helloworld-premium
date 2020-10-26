@@ -5,6 +5,7 @@ description: |-
   This Playbook simulates a vulnerability scan using the "HelloWorld" sample integration. It's used to demonstrate how to use the GenericPolling mechanism to run jobs that take several seconds or minutes to complete. It is designed to be used as a subplaybook, but you can also use it as a standalone playbook, by providing the ${Endpoint.Hostname} input in the Context.
 
   Other inputs include the report output format (JSON context or File attached), and the Interval/Timeouts to use for polling the scan status until it's complete.
+fromversion: 5.0.0
 starttaskid: "0"
 tasks:
   "0":
@@ -12,6 +13,7 @@ tasks:
     taskid: 522f3240-d395-42f4-87cc-f4d9590a1238
     type: start
     task:
+      description: ''
       id: 522f3240-d395-42f4-87cc-f4d9590a1238
       version: -1
       name: ""

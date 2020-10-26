@@ -4,6 +4,7 @@ name: HelloWorldPremium-Test
 description: 'HelloWorldPremium Test Playbook - for documentation on how to write
   test playbooks please refer to: https://xsoar.pan.dev/docs/integrations/test-playbooks'
 starttaskid: "0"
+fromversion: 5.0.0
 tasks:
   "0":
     id: "0"
