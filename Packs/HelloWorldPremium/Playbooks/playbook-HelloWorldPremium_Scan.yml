@@ -13,7 +13,7 @@ tasks:
     taskid: 522f3240-d395-42f4-87cc-f4d9590a1238
     type: start
     task:
-      description: ''
+      description: Starting playbook.
       id: 522f3240-d395-42f4-87cc-f4d9590a1238
       version: -1
       name: ""
