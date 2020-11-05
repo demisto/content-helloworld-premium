@@ -30,7 +30,6 @@ jobs:
       run: |
         mkdir -p Packs
         pip install -r .github/requirements.txt
-        npm install @mdx-js/mdx fsevents
 
         if [ ! "$(ls -A Packs)" ]; then
           echo No files in Packs
