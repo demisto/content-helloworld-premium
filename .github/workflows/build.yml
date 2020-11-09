@@ -28,6 +28,7 @@ jobs:
           ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
+        npm install @mdx-js/mdx
         mkdir -p Packs
         pip install -r .github/requirements.txt
 

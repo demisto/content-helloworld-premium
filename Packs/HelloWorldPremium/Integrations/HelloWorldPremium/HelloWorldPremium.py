@@ -644,7 +644,8 @@ def test_module(client: Client, first_fetch_time: int) -> str:
     # Cortex XSOAR will print everything you return different than 'ok' as
     # an error
     try:
-        client.search_alerts(max_results=1, start_time=first_fetch_time, alert_status=None, alert_type=None, severity=None)
+        client.search_alerts(max_results=1, start_time=first_fetch_time, alert_status=None, alert_type=None,
+                             severity=None)
     except DemistoException as e:
         if 'Forbidden' in str(e):
             return 'Authorization Error: make sure API Key is correctly set'
@@ -840,7 +841,7 @@ def fetch_incidents(client: Client, max_results: int, last_run: Dict[str, int],
     return next_run, incidents
 
 
-def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshold: int) -> CommandResults:
+def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshold: int) -> List[CommandResults]:
     """ip command: Returns IP reputation for a list of IPs
 
     :type client: ``Client``
@@ -881,9 +882,9 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
     # where threshold is an actual argument of the command.
     threshold = int(args.get('threshold', default_threshold))
 
-    # Context standard for IP class
-    ip_standard_list: List[Common.IP] = []
-    ip_data_list: List[Dict[str, Any]] = []
+    # Initialize an empty list of CommandResults to return
+    # each CommandResult will contain context standard for IP
+    command_results: List[CommandResults] = []
 
     for ip in ips:
         ip_data = client.get_ip_reputation(ip)
@@ -906,7 +907,7 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
             score = Common.DBotScore.GOOD  # good
 
         # The context is bigger here than other commands, as it consists in 3
-        # parts: the vendor-specific context (HelloWorld), the standard-context
+        # parts: the vendor-specific context (HelloWorldPremium), the standard-context
         # (IP) and the DBotScore.
         # More information:
         # https://xsoar.pan.dev/docs/integrations/context-and-outputs
@@ -931,8 +932,6 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
             dbot_score=dbot_score
         )
 
-        ip_standard_list.append(ip_standard_context)
-
         # INTEGRATION DEVELOPER TIP
         # In the integration specific Context output (HelloWorldPremium.IP) in this
         # example you want to provide a lot of information as it can be used
@@ -949,26 +948,27 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
         # Define which fields we want to exclude from the context output as
         # they are too verbose.
         ip_context_excluded_fields = ['objects', 'nir']
-        ip_data_list.append({k: ip_data[k] for k in ip_data if k not in ip_context_excluded_fields})
+        ip_data = {k: ip_data[k] for k in ip_data if k not in ip_context_excluded_fields}
 
-    # In this case we want to use an custom markdown to specify the table title,
-    # but otherwise ``CommandResults()`` will call ``tableToMarkdown()``
-    #  automatically
-    readable_output = tableToMarkdown('IP List', ip_data_list)
+        # In this case we want to use an custom markdown to specify the table title,
+        # but otherwise ``CommandResults()`` will call ``tableToMarkdown()``
+        #  automatically
+        readable_output = tableToMarkdown('IP', ip_data)
 
-    # INTEGRATION DEVELOPER TIP
-    # The output key will be ``HelloWorldPremium.IP``, using ``ip`` as the key field.
-    # ``indicators`` is used to provide the context standard (IP)
-    return CommandResults(
-        readable_output=readable_output,
-        outputs_prefix='HelloWorldPremium.IP',
-        outputs_key_field='ip',
-        outputs=ip_data_list,
-        indicators=ip_standard_list
-    )
+        # INTEGRATION DEVELOPER TIP
+        # The output key will be ``HelloWorldPremium.IP``, using ``ip`` as the key field.
+        # ``indicator`` is used to provide the context standard (IP)
+        command_results.append(CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='HelloWorldPremium.IP',
+            outputs_key_field='ip',
+            outputs=ip_data,
+            indicator=ip_standard_context
+        ))
+    return command_results
 
 
-def domain_reputation_command(client: Client, args: Dict[str, Any], default_threshold: int) -> CommandResults:
+def domain_reputation_command(client: Client, args: Dict[str, Any], default_threshold: int) -> List[CommandResults]:
     """domain command: Returns domain reputation for a list of domains
 
     :type client: ``Client``
@@ -1005,10 +1005,9 @@ def domain_reputation_command(client: Client, args: Dict[str, Any], default_thre
 
     threshold = int(args.get('threshold', default_threshold))
 
-    # Context standard for Domain class
-    domain_standard_list: List[Common.Domain] = []
-
-    domain_data_list: List[Dict[str, Any]] = []
+    # Initialize an empty list of CommandResults to return,
+    # each CommandResult will contain context standard for Domain
+    command_results: List[CommandResults] = []
 
     for domain in domains:
         domain_data = client.get_domain_reputation(domain)
@@ -1042,7 +1041,7 @@ def domain_reputation_command(client: Client, args: Dict[str, Any], default_thre
 
         # INTEGRATION DEVELOPER TIP
         # The context is bigger here than other commands, as it consists in 3
-        # parts: the vendor-specific context (HelloWorld), the standard-context
+        # parts: the vendor-specific context (HelloWorldPremium), the standard-context
         # (Domain) and the DBotScore.
         # More information:
         # https://xsoar.pan.dev/docs/integrations/context-and-outputs
@@ -1073,29 +1072,27 @@ def domain_reputation_command(client: Client, args: Dict[str, Any], default_thre
             dbot_score=dbot_score
         )
 
-        domain_standard_list.append(domain_standard_context)
-        domain_data_list.append(domain_data)
+        # In this case we want to use an custom markdown to specify the table title,
+        # but otherwise ``CommandResults()`` will call ``tableToMarkdown()``
+        #  automatically
+        readable_output = tableToMarkdown('Domain', domain_data)
 
-    # In this case we want to use an custom markdown to specify the table title,
-    # but otherwise ``CommandResults()`` will call ``tableToMarkdown()``
-    #  automatically
-    readable_output = tableToMarkdown('Domain List', domain_data_list)
-
-    # INTEGRATION DEVELOPER TIP
-    # The output key will be ``HelloWorldPremium.Domain``, using ``domain`` as the key
-    # field.
-    # ``indicators`` is used to provide the context standard (Domain)
-    return CommandResults(
-        readable_output=readable_output,
-        outputs_prefix='HelloWorldPremium.Domain',
-        outputs_key_field='domain',
-        outputs=domain_data_list,
-        indicators=domain_standard_list
-    )
+        # INTEGRATION DEVELOPER TIP
+        # The output key will be ``HelloWorldPremium.Domain``, using ``domain`` as the key
+        # field.
+        # ``indicator`` is used to provide the context standard (Domain)
+        command_results.append(CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='HelloWorldPremium.Domain',
+            outputs_key_field='domain',
+            outputs=domain_data,
+            indicator=domain_standard_context
+        ))
+    return command_results
 
 
 def search_alerts_command(client: Client, args: Dict[str, Any]) -> CommandResults:
-    """helloworldpremium-search-alerts command: Search alerts in HelloWorld
+    """helloworldpremium-search-alerts command: Search alerts in HelloWorldPremium
 
     :type client: ``Client``
     :param Client: HelloWorldPremium client to use
@@ -1344,7 +1341,7 @@ def scan_status_command(client: Client, args: Dict[str, Any]) -> CommandResults:
     )
 
 
-def scan_results_command(client: Client, args: Dict[str, Any]) -> Union[Dict[str, Any], CommandResults]:
+def scan_results_command(client: Client, args: Dict[str, Any]) -> Union[Dict[str, Any], CommandResults, List[CommandResults]]:
     """helloworldpremium-scan-results command: Returns results for a HelloWorldPremium scan
 
     :type client: ``Client``
@@ -1395,19 +1392,31 @@ def scan_results_command(client: Client, args: Dict[str, Any]) -> Union[Dict[str
         # context standard, so we must extract CVE IDs and return them also.
         # See: https://xsoar.pan.dev/docs/integrations/context-standards#cve
         cves: List[Common.CVE] = []
+        command_results: List[CommandResults] = []
         entities = results.get('entities', [])
         for e in entities:
             if 'vulns' in e.keys() and isinstance(e['vulns'], list):
                 cves.extend([Common.CVE(id=c, cvss=None, published=None, modified=None, description=None) for c in e['vulns']])
 
+        # INTEGRATION DEVELOPER TIP
+        # We want to provide a unique result for every CVE indicator.
+        # Since every entity may contain several CVE indicators,
+        # we will split the entities result and CVE indicator results.
         readable_output = tableToMarkdown(f'Scan {scan_id} results', entities)
-        return CommandResults(
+        command_results.append(CommandResults(
             readable_output=readable_output,
             outputs_prefix='HelloWorldPremium.Scan',
             outputs_key_field='scan_id',
-            outputs=results,
-            indicators=list(set(cves))  # make the indicator list unique
-        )
+            outputs=results
+        ))
+
+        cves = list(set(cves))  # make the indicator list unique
+        for cve in cves:
+            command_results.append(CommandResults(
+                readable_output=f"CVE {cve}",
+                indicator=cve
+            ))
+        return command_results
     else:
         raise ValueError('Incorrect format, must be "json" or "file"')
 
