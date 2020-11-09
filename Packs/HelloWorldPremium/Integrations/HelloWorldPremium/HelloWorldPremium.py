@@ -14,7 +14,6 @@ that allows you to capture Use Cases, Requirements and Inputs/Outputs.
 
 Example Design document for the this Integration (HelloWorldPremium):
 https://docs.google.com/document/d/1wETtBEKg37PHNU8tYeB56M1LE314ux086z3HFeF_cX0
-.....
 
 
 HelloWorldPremium API
@@ -476,7 +475,7 @@ class Client(BaseClient):
 def parse_domain_date(domain_date: Union[List[str], str], date_format: str = '%Y-%m-%dT%H:%M:%S.000Z') -> Optional[str]:
     """Converts whois date format to an ISO8601 string
 
-    Converts the HelloWorld domain WHOIS date (YYYY-mm-dd HH:MM:SS) format
+    Converts the HelloWorldPremium domain WHOIS date (YYYY-mm-dd HH:MM:SS) format
     in a datetime. If a list is returned with multiple elements, takes only
     the first one.
 
