@@ -589,3 +589,4 @@ script:
   type: python
 defaultclassifier: HelloWorldPremium
 defaultmapperin: HelloWorldPremium-mapper
+fromversion: 5.0.0
