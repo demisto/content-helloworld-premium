@@ -620,7 +620,7 @@ def arg_to_timestamp(arg: Any, arg_name: str, required: bool = False) -> Optiona
 def test_module(client: Client, first_fetch_time: int) -> str:
     """Tests API connectivity and authentication'
 
-    Returning 'ok' indicates that the integration works like it is supposed to.
+    Returning 'ok' indicates that the integration works like it is supposed to..
     Connection to the service is successful.
     Raises exceptions if something goes wrong.
 

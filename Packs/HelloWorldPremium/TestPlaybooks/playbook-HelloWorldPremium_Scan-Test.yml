@@ -2,125 +2,152 @@ id: HelloWorldPremium_Scan-Test
 version: -1
 name: HelloWorldPremium_Scan-Test
 description: Test Playbook for HelloWorldPremium Scan
-starttaskid: '0'
+starttaskid: "0"
+fromversion: 5.0.0
 tasks:
-  '0':
-    id: '0'
-    taskid: 8954c84a-7bb7-4d06-8c4b-58ef786bb202
+  "0":
+    id: "0"
+    taskid: d4e6ed8b-2c7a-4c64-8c52-d9b6fb3afd56
     type: start
     task:
-      id: 8954c84a-7bb7-4d06-8c4b-58ef786bb202
+      id: d4e6ed8b-2c7a-4c64-8c52-d9b6fb3afd56
       version: -1
-      name: ''
+      name: ""
       iscommand: false
-      brand: ''
-      description: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '1'
+      - "1"
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 450,\n    \"y\": 50\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 50
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '1':
-    id: '1'
-    taskid: a7ba2ce7-6c05-49b1-82b7-cc45449665bd
+  "1":
+    id: "1"
+    taskid: 5d8b90a3-d405-48fa-8476-bbb0b21f9364
     type: regular
     task:
-      id: a7ba2ce7-6c05-49b1-82b7-cc45449665bd
+      id: 5d8b90a3-d405-48fa-8476-bbb0b21f9364
       version: -1
       name: DeleteContext
       description: Delete field from context
       scriptName: DeleteContext
       type: regular
       iscommand: false
-      brand: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '2'
+      - "2"
     scriptarguments:
       all:
-        simple: yes
+        simple: "yes"
       index: {}
       key: {}
       keysToKeep: {}
       subplaybook: {}
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 450,\n    \"y\": 190\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 190
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '2':
-    id: '2'
-    taskid: b30f4cfd-3679-4faf-8436-96c07540e899
+  "2":
+    id: "2"
+    taskid: d456bd90-a34c-4f1d-89f7-dbdba057e9fe
     type: playbook
     task:
-      id: b30f4cfd-3679-4faf-8436-96c07540e899
+      id: d456bd90-a34c-4f1d-89f7-dbdba057e9fe
       version: -1
-      name: HelloWorldPremium Scan
-      description: "This Playbook simulates a vulerability scan using the \"HelloWorldPremium\"\
-        \ sample integration. It's used to demonstrate how to use the GenericPolling\
-        \ mechanism to run jobs that take several seconds or minutes to complete.\
-        \ It is designed to be used as a subplaybook, but you can also use it as a\
-        \ standalone playbook, by providing the ${Endpoint.Hostname} input in the\
-        \ Context.\n\nOther inputs include the report output format (JSON context\
-        \ or File attached), and the Interval/Timeouts to use for polling the scan\
-        \ status until it's complete."
-      playbookName: HelloWorldPremium Scan
+      name: HelloWorldPremium_Scan
+      description: |-
+        This Playbook simulates a vulerability scan using the "HelloWorldPremium" sample integration. It's used to demonstrate how to use the GenericPolling mechanism to run jobs that take several seconds or minutes to complete. It is designed to be used as a subplaybook, but you can also use it as a standalone playbook, by providing the ${Endpoint.Hostname} input in the Context.
+
+        Other inputs include the report output format (JSON context or File attached), and the Interval/Timeouts to use for polling the scan status until it's complete.
+      playbookName: HelloWorldPremium_Scan
       type: playbook
       iscommand: false
-      brand: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '3'
+      - "3"
     scriptarguments:
       Hostname:
         simple: test123.local
       Interval:
-        simple: '1'
+        simple: "1"
       Report Format:
         simple: json
       Timeout:
-        simple: '8'
+        simple: "8"
     separatecontext: true
     loop:
       iscommand: false
-      exitCondition: ''
+      exitCondition: ""
       wait: 1
       max: 100
-    view: "{\n  \"position\": {\n    \"x\": 450,\n    \"y\": 360\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 360
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '3':
-    id: '3'
-    taskid: d425febd-8dee-4477-86af-b619ec2a5aa7
+  "3":
+    id: "3"
+    taskid: 0bac6d91-009e-4801-8afa-48f3f9f2e00a
     type: title
     task:
-      id: d425febd-8dee-4477-86af-b619ec2a5aa7
+      id: 0bac6d91-009e-4801-8afa-48f3f9f2e00a
       version: -1
       name: Test Done
       type: title
       iscommand: false
-      brand: ''
-      description: ''
+      brand: ""
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 450,\n    \"y\": 530\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 530
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-view: "{\n  \"linkLabelsPosition\": {},\n  \"paper\": {\n    \"dimensions\": {\n \
-  \     \"height\": 545,\n      \"width\": 380,\n      \"x\": 450,\n      \"y\": 50\n\
-  \    }\n  }\n}"
+view: |-
+  {
+    "linkLabelsPosition": {},
+    "paper": {
+      "dimensions": {
+        "height": 545,
+        "width": 380,
+        "x": 450,
+        "y": 50
+      }
+    }
+  }
 inputs: []
 outputs: []
-fromversion: 5.0.0

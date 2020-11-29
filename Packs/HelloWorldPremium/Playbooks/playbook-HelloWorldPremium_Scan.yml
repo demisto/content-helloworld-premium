@@ -1,84 +1,96 @@
-id: HelloWorldPremium Scan
+id: HelloWorldPremium_Scan
 version: -1
-name: HelloWorldPremium Scan
-description: "This Playbook simulates a vulnerability scan using the \"HelloWorld\"\
-  \ sample integration. It's used to demonstrate how to use the GenericPolling mechanism\
-  \ to run jobs that take several seconds or minutes to complete. It is designed to\
-  \ be used as a subplaybook, but you can also use it as a standalone playbook, by\
-  \ providing the ${Endpoint.Hostname} input in the Context.\n\nOther inputs include\
-  \ the report output format (JSON context or File attached), and the Interval/Timeouts\
-  \ to use for polling the scan status until it's complete."
-starttaskid: '0'
+name: HelloWorldPremium_Scan
+description: |-
+  This Playbook simulates a vulnerability scan using the "HelloWorld" sample integration. It's used to demonstrate how to use the GenericPolling mechanism to run jobs that take several seconds or minutes to complete. It is designed to be used as a subplaybook, but you can also use it as a standalone playbook, by providing the ${Endpoint.Hostname} input in the Context.
+
+  Other inputs include the report output format (JSON context or File attached), and the Interval/Timeouts to use for polling the scan status until it's complete.
+fromversion: 5.0.0
+starttaskid: "0"
 tasks:
-  '0':
-    id: '0'
-    taskid: dafe8c51-8798-4472-8b0d-b9cfc1b1b613
+  "0":
+    id: "0"
+    taskid: 522f3240-d395-42f4-87cc-f4d9590a1238
     type: start
     task:
-      id: dafe8c51-8798-4472-8b0d-b9cfc1b1b613
+      description: Starting playbook.
+      id: 522f3240-d395-42f4-87cc-f4d9590a1238
       version: -1
-      name: ''
+      name: ""
       iscommand: false
-      brand: ''
-      description: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '5'
+      - "5"
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 265,\n    \"y\": 50\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 265,
+          "y": 50
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '1':
-    id: '1'
-    taskid: 6b00143b-8523-4436-8950-adfd73869e64
+  "1":
+    id: "1"
+    taskid: 3fa89287-cf9c-4571-86bb-f9c5bf8e08c5
     type: regular
     task:
-      id: 6b00143b-8523-4436-8950-adfd73869e64
+      id: 3fa89287-cf9c-4571-86bb-f9c5bf8e08c5
       version: -1
       name: Start a Hello World Premium Scan
-      description: Start a HelloWorldPremium scan on an asset, identified from by ${input.Hostname}
-        key.
+      description: Start a HelloWorldPremium scan on an asset, identified from by
+        ${input.Hostname} key.
       script: '|||helloworldpremium-scan-start'
       type: regular
       iscommand: true
-      brand: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '2'
+      - "2"
     scriptarguments:
       hostname:
         simple: ${inputs.Hostname}
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 50,\n    \"y\": 370\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 370
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '2':
-    id: '2'
-    taskid: 658053d1-8d16-45b8-8241-f0e0f1f9d982
+  "2":
+    id: "2"
+    taskid: 32b046ff-d790-4fb6-8d0f-5279cc510085
     type: playbook
     task:
-      id: 658053d1-8d16-45b8-8241-f0e0f1f9d982
+      id: 32b046ff-d790-4fb6-8d0f-5279cc510085
       version: -1
       name: GenericPolling
-      description: "Use this playbook as a sub-playbook to block execution of the\
-        \ master playbook until a remote action is complete.\nThis playbook implements\
-        \ polling by continuously running the command in Step \\#2 until the operation\
-        \ completes.\nThe remote action should have the following structure:\n\n1.\
-        \ Initiate the operation.\n2. Poll to check if the operation completed.\n\
-        3. (optional) Get the results of the operation."
+      description: |-
+        Use this playbook as a sub-playbook to block execution of the master playbook until a remote action is complete.
+        This playbook implements polling by continuously running the command in Step \#2 until the operation completes.
+        The remote action should have the following structure:
+
+        1. Initiate the operation.
+        2. Poll to check if the operation completed.
+        3. (optional) Get the results of the operation.
       playbookName: GenericPolling
       type: playbook
       iscommand: false
-      brand: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '3'
+      - "3"
     scriptarguments:
       AdditionalPollingCommandArgNames: {}
       AdditionalPollingCommandArgValues: {}
@@ -97,80 +109,98 @@ tasks:
     separatecontext: true
     loop:
       iscommand: false
-      exitCondition: ''
+      exitCondition: ""
       wait: 1
       max: 100
-    view: "{\n  \"position\": {\n    \"x\": 50,\n    \"y\": 545\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 545
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '3':
-    id: '3'
-    taskid: 48a7dfde-e420-48b7-8a04-59f423ee4e52
+  "3":
+    id: "3"
+    taskid: 077e5ee2-9cb5-4793-8709-ec9f7b75fe9c
     type: regular
     task:
-      id: 48a7dfde-e420-48b7-8a04-59f423ee4e52
+      id: 077e5ee2-9cb5-4793-8709-ec9f7b75fe9c
       version: -1
       name: Retrieve HelloWorldPremium Scan Results
       description: Retrieve scan status in Context or as a File (default) for a Scan.
       script: '|||helloworldpremium-scan-results'
       type: regular
       iscommand: true
-      brand: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '4'
+      - "4"
     scriptarguments:
       format:
         simple: ${inputs.Report Format}
       scan_id:
         simple: ${HelloWorldPremium.Scan.scan_id}
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 50,\n    \"y\": 720\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 720
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '4':
-    id: '4'
-    taskid: 480e9af4-1e53-4351-8a6e-3e0d9a369cc0
+  "4":
+    id: "4"
+    taskid: a5db0b17-5bd0-4ad8-8e94-0792f73abdb4
     type: title
     task:
-      id: 480e9af4-1e53-4351-8a6e-3e0d9a369cc0
+      id: a5db0b17-5bd0-4ad8-8e94-0792f73abdb4
       version: -1
       name: Done
+      description: Done
       type: title
       iscommand: false
-      brand: ''
-      description: ''
+      brand: ""
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 265,\n    \"y\": 895\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 265,
+          "y": 895
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '5':
-    id: '5'
-    taskid: 0449752f-d12c-45e8-8bb9-1465da7e57f7
+  "5":
+    id: "5"
+    taskid: b57d39ad-21ca-4a07-8f35-dfe5a978ea3a
     type: condition
     task:
-      id: 0449752f-d12c-45e8-8bb9-1465da7e57f7
+      id: b57d39ad-21ca-4a07-8f35-dfe5a978ea3a
       version: -1
       name: Is Hostname set?
       description: Check if the input Hostname is valid (i.e. is not Empty), do not
         run the scan otherwise.
       type: condition
       iscommand: false
-      brand: ''
+      brand: ""
     nexttasks:
       '#default#':
-      - '6'
+      - "6"
       "true":
-      - '1'
+      - "1"
     separatecontext: false
     conditions:
     - label: "true"
@@ -180,41 +210,62 @@ tasks:
             value:
               simple: inputs.Hostname
             iscontext: true
-    view: "{\n  \"position\": {\n    \"x\": 265,\n    \"y\": 195\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 265,
+          "y": 195
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-  '6':
-    id: '6'
-    taskid: 77b84196-1f07-4013-8f31-863e7315d3b4
+  "6":
+    id: "6"
+    taskid: 2f5cf35e-134d-4ffa-806a-6a3f166c0b4d
     type: regular
     task:
-      id: 77b84196-1f07-4013-8f31-863e7315d3b4
+      id: 2f5cf35e-134d-4ffa-806a-6a3f166c0b4d
       version: -1
       name: Print Error
       description: Prints an error entry with a given message
       scriptName: PrintErrorEntry
       type: regular
       iscommand: false
-      brand: ''
+      brand: ""
     nexttasks:
       '#none#':
-      - '4'
+      - "4"
     scriptarguments:
       message:
         simple: Hostname is not set, cannot run the playbook!
     separatecontext: false
-    view: "{\n  \"position\": {\n    \"x\": 480,\n    \"y\": 720\n  }\n}"
+    view: |-
+      {
+        "position": {
+          "x": 480,
+          "y": 720
+        }
+      }
     note: false
     timertriggers: []
     ignoreworker: false
     skipunavailable: false
     quietmode: 0
-view: "{\n  \"linkLabelsPosition\": {},\n  \"paper\": {\n    \"dimensions\": {\n \
-  \     \"height\": 910,\n      \"width\": 810,\n      \"x\": 50,\n      \"y\": 50\n\
-  \    }\n  }\n}"
+view: |-
+  {
+    "linkLabelsPosition": {},
+    "paper": {
+      "dimensions": {
+        "height": 910,
+        "width": 810,
+        "x": 50,
+        "y": 50
+      }
+    }
+  }
 inputs:
 - key: Hostname
   value:
@@ -224,26 +275,26 @@ inputs:
   required: true
   description: Hostname to run the scan against. By default takes ${Endpoint.Hostname}
     from the context as the input.
-  playbookInputQuery:
+  playbookInputQuery: null
 - key: Report Format
   value:
     simple: json
   required: true
   description: 'Output report format: can be "json" (output parsed and written in
     the Context) or "file" (saved as an attachment). By default is "json".'
-  playbookInputQuery:
+  playbookInputQuery: null
 - key: Interval
   value:
-    simple: '1'
+    simple: "1"
   required: true
   description: How often to check for the scan to be completed (minutes)
-  playbookInputQuery:
+  playbookInputQuery: null
 - key: Timeout
   value:
-    simple: '15'
+    simple: "15"
   required: true
   description: How long to wait for the scan to be completed before timing out (minutes)
-  playbookInputQuery:
+  playbookInputQuery: null
 outputs:
 - contextPath: HelloWorldPremium.Scan.entity.entity-id
   description: Scanned entity ID.
@@ -269,6 +320,5 @@ outputs:
   description: The size of the report file.
 - contextPath: InfoFile.Type
   description: The type of the report file.
-fromversion: 5.0.0
 tests:
  -  No tests
