@@ -1,0 +1,256 @@
+{
+    "scripts": [
+        {
+            "HelloWorldPremiumScript": {
+                "name": "HelloWorldPremiumScript",
+                "file_path": "Packs/HelloWorldPremium/Scripts/HelloWorldPremiumScript/HelloWorldPremiumScript.yml",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "tests": [
+                    "No tests (auto formatted)"
+                ]
+            }
+        }
+    ],
+    "playbooks": [
+        {
+            "Handle Hello World Premium Alert": {
+                "name": "Handle Hello World Premium Alert",
+                "file_path": "Packs/HelloWorldPremium/Playbooks/playbook-Handle_Hello_World_Premium_Alert.yml",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "command_to_integration": {
+                    "helloworldpremium-get-alert": ""
+                },
+                "tests": [
+                    "No tests"
+                ],
+                "incident_fields": [
+                    "helloworldpremiumid"
+                ]
+            }
+        },
+        {
+            "HelloWorldPremium_Scan": {
+                "name": "HelloWorldPremium_Scan",
+                "file_path": "Packs/HelloWorldPremium/Playbooks/playbook-HelloWorldPremium_Scan.yml",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "implementing_scripts": [
+                    "PrintErrorEntry"
+                ],
+                "implementing_playbooks": [
+                    "GenericPolling"
+                ],
+                "command_to_integration": {
+                    "helloworldpremium-scan-start": "",
+                    "helloworldpremium-scan-results": ""
+                },
+                "tests": [
+                    "No tests"
+                ]
+            }
+        }
+    ],
+    "integrations": [
+        {
+            "HelloWorldPremium": {
+                "name": "HelloWorldPremium",
+                "file_path": "Packs/HelloWorldPremium/Integrations/HelloWorldPremium/HelloWorldPremium.yml",
+                "fromversion": "5.0.0",
+                "commands": [
+                    "helloworldpremium-say-hello",
+                    "helloworldpremium-search-alerts",
+                    "helloworldpremium-get-alert",
+                    "helloworldpremium-update-alert-status",
+                    "ip",
+                    "domain",
+                    "helloworldpremium-scan-start",
+                    "helloworldpremium-scan-status",
+                    "helloworldpremium-scan-results"
+                ],
+                "tests": [
+                    "No tests (auto formatted)"
+                ],
+                "pack": "HelloWorldPremium",
+                "classifiers": "HelloWorldPremium",
+                "mappers": [
+                    "HelloWorldPremium-mapper"
+                ]
+            }
+        }
+    ],
+    "TestPlaybooks": [
+        {
+            "HelloWorldPremium-Test": {
+                "name": "HelloWorldPremium-Test",
+                "file_path": "Packs/HelloWorldPremium/TestPlaybooks/playbook-HelloWorldPremium-Test.yml",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "implementing_scripts": [
+                    "DeleteContext",
+                    "FetchFromInstance"
+                ],
+                "command_to_integration": {
+                    "helloworldpremium-say-hello": "",
+                    "helloworldpremium-search-alerts": "",
+                    "helloworldpremium-get-alert": "",
+                    "helloworldpremium-update-alert-status": "",
+                    "ip": "",
+                    "domain": "",
+                    "helloworldpremium-scan-start": "",
+                    "helloworldpremium-scan-status": "",
+                    "helloworldpremium-scan-results": "",
+                    "HelloWorldPremiumScript": "HelloWorldPremiumScript"
+                }
+            }
+        },
+        {
+            "HelloWorldPremium_Scan-Test": {
+                "name": "HelloWorldPremium_Scan-Test",
+                "file_path": "Packs/HelloWorldPremium/TestPlaybooks/playbook-HelloWorldPremium_Scan-Test.yml",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "implementing_scripts": [
+                    "DeleteContext"
+                ],
+                "implementing_playbooks": [
+                    "HelloWorldPremium_Scan"
+                ]
+            }
+        }
+    ],
+    "Classifiers": [
+        {
+            "612fd5a2-31bf-4a83-8026-d4275ac5da55": {
+                "file_path": "Packs/HelloWorldPremium/Classifiers/classifier-HelloWorldPremium_5_9_9.json",
+                "toversion": "5.9.9",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "incident_types": [
+                    "Hello World Premium Alert"
+                ]
+            }
+        },
+        {
+            "HelloWorldPremium": {
+                "name": "Hello World Premium - Classification",
+                "file_path": "Packs/HelloWorldPremium/Classifiers/classifier-HelloWorldPremium.json",
+                "fromversion": "6.0.0",
+                "pack": "HelloWorldPremium",
+                "incident_types": [
+                    "Hello World Premium Alert"
+                ]
+            }
+        }
+    ],
+    "Dashboards": [],
+    "IncidentFields": [
+        {
+            "incident_helloworldpremiumid": {
+                "name": "Hello World Premium ID",
+                "file_path": "Packs/HelloWorldPremium/IncidentFields/incidentfield-Hello_World_Premium_ID.json",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "incident_types": [
+                    "Hello World Premium Alert"
+                ]
+            }
+        },
+        {
+            "incident_helloworldpremiumstatus": {
+                "name": "Hello World Premium Status",
+                "file_path": "Packs/HelloWorldPremium/IncidentFields/incidentfield-Hello_World_Premium_Status.json",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "incident_types": [
+                    "Hello World Premium Alert"
+                ]
+            }
+        },
+        {
+            "incident_helloworldpremiumtype": {
+                "name": "Hello World Premium Type",
+                "file_path": "Packs/HelloWorldPremium/IncidentFields/incidentfield-Hello_World_Premium_Type.json",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "incident_types": [
+                    "Hello World Premium Alert"
+                ]
+            }
+        }
+    ],
+    "IncidentTypes": [
+        {
+            "Hello World Premium Alert": {
+                "name": "Hello World Premium Alert",
+                "file_path": "Packs/HelloWorldPremium/IncidentTypes/incidenttype-Hello_World_Premium_Alert.json",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "playbooks": "Handle Hello World Premium Alert"
+            }
+        }
+    ],
+    "IndicatorFields": [],
+    "IndicatorTypes": [],
+    "Layouts": [
+        {
+            "Hello World Premium Alert": {
+                "file_path": "Packs/HelloWorldPremium/Layouts/layout-details-Hello_World_Premium_Alert-V2.json",
+                "toversion": "5.9.9",
+                "fromversion": "5.0.0",
+                "pack": "HelloWorldPremium",
+                "typeID": "Hello World Premium Alert",
+                "typename": "Hello World Premium Alert",
+                "kind": "details",
+                "incident_and_indicator_types": [
+                    "Hello World Premium Alert"
+                ],
+                "incident_and_indicator_fields": [
+                    "name",
+                    "helloworldpremiumstatus",
+                    "helloworldpremiumtype",
+                    "details",
+                    "severity",
+                    "helloworldpremiumid",
+                    "type",
+                    "severity",
+                    "owner",
+                    "dbotsource",
+                    "sourcebrand",
+                    "sourceinstance",
+                    "playbookid",
+                    "occurred",
+                    "dbotmodified",
+                    "dbotduedate",
+                    "dbotcreated",
+                    "dbotclosed",
+                    "dbotclosed",
+                    "closereason",
+                    "closenotes",
+                    "details"
+                ]
+            }
+        }
+    ],
+    "Reports": [],
+    "Widgets": [],
+    "Mappers": [
+        {
+            "HelloWorldPremium-mapper": {
+                "name": "Hello World Premium - Incoming Mapper",
+                "file_path": "Packs/HelloWorldPremium/Classifiers/classifier-mapper-incoming-HelloWorldPremium.json",
+                "fromversion": "6.0.0",
+                "pack": "HelloWorldPremium",
+                "incident_types": [
+                    "Hello World Premium Alert"
+                ],
+                "incident_fields": [
+                    "Hello World Premium Status",
+                    "Hello World Premium ID",
+                    "Hello World Premium Type"
+                ]
+            }
+        }
+    ]
+}
