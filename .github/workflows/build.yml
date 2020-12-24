@@ -50,7 +50,6 @@ jobs:
         path: artifacts/lint_debug_log.log
     - name: Validate all packs
       run: |
-        mkdir Tests
         demisto-sdk validate -a
     - name: Create Artifacts
       if: ${{ always() }}
