@@ -27,7 +27,7 @@
         },
         "IAM": {
             "mandatory": false,
-            "display_name": "IAM"
+            "display_name": "Identity Lifecycle Management - Core"
         }
     }
 }
