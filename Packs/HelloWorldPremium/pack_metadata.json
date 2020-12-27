@@ -26,7 +26,7 @@
             "display_name": "Common Playbooks"
         },
         "IAM": {
-            "mandatory": false,
+            "mandatory": true,
             "display_name": "Identity Lifecycle Management - Core"
         }
     }
