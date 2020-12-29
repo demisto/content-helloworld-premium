@@ -62,6 +62,8 @@ jobs:
         demisto-sdk merge-id-sets -i1 artifacts/pack_id_set.json -i2 artifacts/id_set.json -o artifacts/pack_id_set.json
     - name: Validate all packs
       run: |
+        git fetch
+        git branch
         demisto-sdk validate -a --id-set-path artifacts/pack_id_set.json
     - name: Create Artifacts
       if: ${{ always() }}
