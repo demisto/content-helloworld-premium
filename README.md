@@ -22,7 +22,7 @@ git commit
 git push origin master
 ```
 
-### Adding content-bot as a contributor
+### Adding xsoar-bot as a contributor
 Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
 Invite `xsoar-bot` user.
 
@@ -41,7 +41,7 @@ In order to sync/merge from the `content-external-template` repository from time
 ```
 cd private-repo
 git remote add content-template https://github.com/demisto/content-external-template.git
-git pull content-template master # Creates a merge commit
+git pull content-template master
 git push origin master
 ```
 
