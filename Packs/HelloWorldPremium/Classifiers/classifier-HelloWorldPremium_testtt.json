@@ -1,5 +1,5 @@
 {
-    "id": "HelloWorldPremium-mapper",
+    "id": "HelloWorldPremium-mapper-testtt",
     "name": "Hello World Premium - Incoming Mapper",
     "type": "mapping-incoming",
     "description": "Maps incoming Hello World Premium alert fields.",
