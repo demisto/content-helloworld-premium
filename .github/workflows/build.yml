@@ -73,7 +73,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: private_id_set
-        path: artifacts/privatte_id_set.json
+        path: artifacts/private_id_set.json
     - name: Upload pack ID set file to artifacts
       if: always()
       uses: actions/upload-artifact@v1
