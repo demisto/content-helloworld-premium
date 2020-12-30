@@ -68,6 +68,18 @@ jobs:
       with:
         name: id_set
         path: artifacts/id_set.json
+    - name: Upload private ID set file to artifacts
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: private_id_set
+        path: artifacts/privatte_id_set.json
+    - name: Upload pack ID set file to artifacts
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: pack_id_set
+        path: artifacts/pack_id_set.json
     - name: Validate all packs
       run: |
         git fetch
