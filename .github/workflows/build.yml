@@ -71,7 +71,6 @@ jobs:
     - name: Validate all packs
       run: |
         git fetch
-        git branch
         demisto-sdk validate -a --id-set-path artifacts/id_set.json
     - name: Create Artifacts
       if: always()
