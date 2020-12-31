@@ -2,7 +2,7 @@
     "name": "HelloWorldPremium",
     "description": "This is the Hello World Premium integration for getting started.",
     "support": "xsoar",
-    "price": 10,
+    "price": 0,
     "vendorId": "38DHG14",
     "vendorName": "VendorXSOAR",
     "currentVersion": "1.0.8",
