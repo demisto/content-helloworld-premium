@@ -865,7 +865,7 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
     :rtype: ``CommandResults``
     """
 
-    # INTEGRATION DEVELOPER TIP
+    # INTEGRATION DEVELOPER TIP!
     # Reputation commands usually support multiple inputs (i.e. arrays), so
     # they can be invoked once in XSOAR. In this case the API supports a single
     # IP at a time, so we will cycle this for all the members of the array.
