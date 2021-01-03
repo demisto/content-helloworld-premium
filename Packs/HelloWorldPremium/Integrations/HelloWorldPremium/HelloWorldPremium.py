@@ -860,7 +860,7 @@ def ip_reputation_command(client: Client, args: Dict[str, Any], default_threshol
 
     :return:
         A ``CommandResults`` object that is then passed to ``return_results``,
-        that contains IPs
+        that contains IPs.
 
     :rtype: ``CommandResults``
     """
