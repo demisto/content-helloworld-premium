@@ -1,1 +1,1 @@
-demisto-sdk
+git+git://github.com/demisto/demisto-sdk@finally-fixed-3.9
