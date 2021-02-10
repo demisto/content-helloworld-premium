@@ -232,6 +232,7 @@ command function passing to it ``demisto.args()`` and returning the data to
 returns an error message via ``return_error()``.
 
 
+
 Entry Point
 -----------
 
