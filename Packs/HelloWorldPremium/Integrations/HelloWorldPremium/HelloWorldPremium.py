@@ -57,7 +57,7 @@ can be returned in JSON or attachment file format.
 Info on GenericPolling: https://xsoar.pan.dev/docs/playbooks/generic-polling
 
 Please check the HelloWorldPremium Design Document referenced above for details about
-the raw API responsens as well as the design details for this integration.
+the raw API responses as well as the design details for this integration.
 
 This integration also has a ``say-hello`` command for backward compatibility,
 that doesn't connect to an API and just returns a ``Hello {name}`` string,
@@ -230,7 +230,6 @@ command function passing to it ``demisto.args()`` and returning the data to
 ``fetch_incidents()``with the right parameters and passes the outputs to the
 ``demisto.incidents()`` function. ``main()`` also catches exceptions and
 returns an error message via ``return_error()``.
-
 
 
 Entry Point
