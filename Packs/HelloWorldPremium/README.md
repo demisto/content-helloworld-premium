@@ -12,3 +12,5 @@ HelloWorldPremium Alert:
 HelloWorldPremium scan
 
 ![Setup Account](./../../doc_files/HelloWorldPremium_Scan.png)
+
+==== TEST ====
