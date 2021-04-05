@@ -1,5 +1,3 @@
-==== TEST ====
-
 Hello World Premium Script
 ## Script Data
 ---
