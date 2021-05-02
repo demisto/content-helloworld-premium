@@ -10,6 +10,6 @@ HelloWorldPremium Alert:
 
 ![Setup Account](./doc_files/Handle_Hello_World_Premium_Alert.png)
 
-HelloWorldPremium scan
+HelloWorldPremium Scan:
 
 ![Setup Account](./doc_files/HelloWorldPremium_Scan.png)
