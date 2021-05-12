@@ -1,1 +1,1 @@
-demisto-sdk
+git+git://github.com/demisto/demisto-sdk.git@7e7b8d2f479847c02cf6c13b78d89db4bc1ba58c
