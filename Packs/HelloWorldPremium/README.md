@@ -8,8 +8,8 @@ This integration was built to interact with the sample SOAR Hello World Premium 
 
 HelloWorldPremium Alert:
 
-![Setup Account](https://github.com/demisto/content-helloworld-premium/blob/master/Packs/HelloWorldPremium/doc_files/Handle_Hello_World_Premium_Alert.png)
+![Setup Account](https://github.com/demisto/content-helloworld-premium/blob/master/Packs/HelloWorldPremium/doc_files/Handle_Hello_World_Premium_Alert.png?raw=true)
 
 HelloWorldPremium Scan:
 
-![Setup Account](https://github.com/demisto/content-helloworld-premium/blob/master/Packs/HelloWorldPremium/doc_files/HelloWorldPremium_Scan.png)
+![Setup Account](https://github.com/demisto/content-helloworld-premium/blob/master/Packs/HelloWorldPremium/doc_files/HelloWorldPremium_Scan.png?raw=true)
