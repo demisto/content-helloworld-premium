@@ -6,7 +6,7 @@ Hello World Premium Script
 | --- | --- |
 | Script Type | python3 |
 | Tags | helloworldpremium |
-| Demisto Version | 5.0.0 |
+| Cortex XSOAR Version | 6.0.0 |
 
 ## Inputs
 ---
