@@ -7,10 +7,10 @@ args:
   secret: false
 comment: Hello World Premium Script
 commonfields:
-  id: HelloWorldPremiumScript
+  id: HelloWorldPremiumScript script
   version: -1
 enabled: false
-name: HelloWorldPremiumScript
+name: HelloWorldPremiumScript script
 outputs:
 - contextPath: HelloWorldPremium.hello
   description: Should be Hello **something** here.
