@@ -444,7 +444,7 @@ tasks:
       version: -1
       name: ip
       description: Get ip reputation for ip '8.8.8.8'
-      script: '|||ip'
+      script: 'HelloWorldPremium|||ip'
       type: regular
       iscommand: true
       brand: ""
@@ -608,7 +608,7 @@ tasks:
       version: -1
       name: domain
       description: Run the domain command for domain 'google.com'
-      script: '|||domain'
+      script: 'HelloWorldPremium|||domain'
       type: regular
       iscommand: true
       brand: ""
