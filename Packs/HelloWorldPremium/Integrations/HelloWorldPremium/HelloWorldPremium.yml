@@ -21,10 +21,11 @@ configuration:
   name: max_fetch
   required: false
   type: 0
-- display: API Key
-  name: apikey
+- displaypassword: API Key
+  name: credentials
+  type: 9
   required: true
-  type: 4
+  hiddenusername: true
 - defaultvalue: '65'
   display: Score threshold for IP reputation command
   additionalinfo: Set this to determine the HelloWorldPremium score that will determine
