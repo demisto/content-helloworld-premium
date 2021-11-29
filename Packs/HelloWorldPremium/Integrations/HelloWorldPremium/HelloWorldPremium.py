@@ -1430,7 +1430,8 @@ def main() -> None:
     :return:
     :rtype:
     """
-    api_key = demisto.params().get('credentials', {}).get('password')
+    api_key = demisto.get(demisto.params(), 'credentials.password')
+
     # get the service API url
     base_url = urljoin(demisto.params()['url'], '/api/v1')
 
