@@ -590,7 +590,7 @@ script:
     - contextPath: CVE.ID
       description: The ID of the CVE.
       type: string
-  dockerimage: demisto/python3:3.9.6.24067
+  dockerimage: demisto/python3:3.9.8.24399
   isfetch: true
   longRunning: false
   longRunningPort: false
@@ -600,6 +600,6 @@ script:
   type: python
 defaultclassifier: HelloWorldPremium
 defaultmapperin: HelloWorldPremium-mapper
-fromversion: 5.0.0
+fromversion: 5.5.0
 tests:
 - No tests (auto formatted)
