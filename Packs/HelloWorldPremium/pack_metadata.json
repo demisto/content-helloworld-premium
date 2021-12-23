@@ -1,6 +1,6 @@
 {
     "name": "HelloWorldPremium",
-    "description": "This is the Hello World Premium integration for getting started",
+    "description": "This is the Hello World Premium pack for getting started",
     "support": "xsoar",
     "price": 0,
     "currentVersion": "1.1.5",
