@@ -1,14 +1,22 @@
 {
     "name": "HelloWorldPremium-Resell",
     "description": "This pack is the Hello World Premium - Resell pack for getting started.",
-    "support": "xsoar",
+    "support": "partner",
     "currentVersion": "1.0.0",
-    "author": "Cortex XSOAR",
-    "url": "https://www.paloaltonetworks.com/cortex",
-    "email": "",
+    "author": "My Company Name",
+    "url": "https://www.my-support-site.com",
+    "eulaLink": "https://my-premium-user-eula.com",
+    "email": "mysupportemail@domain.com",
     "categories": [
         "Utilities"
     ],
+    "dependencies": {
+        "HelloWorld": {
+             "mandatory": true,
+             "display_name": "HelloWorld"
+         }
+   },
+   "price": "100",
     "tags": [],
     "useCases": [],
     "keywords": []
