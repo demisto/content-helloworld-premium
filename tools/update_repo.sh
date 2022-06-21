@@ -12,8 +12,6 @@ output_paths=(
     "dev_envs/default_python3/Pipfile"
     "dev_envs/default_python3/Pipfile.lock"
     "dev_envs/pytest/conftest.py"
-    "dev-requirements-py2.txt"
-    "dev-requirements-py3.txt"
     "package.json"
     "package-lock.json"
 )
@@ -28,8 +26,6 @@ url_to_fetch_from=(
     "https://raw.githubusercontent.com/demisto/content/master/Tests/scripts/dev_envs/default_python3/Pipfile"
     "https://raw.githubusercontent.com/demisto/content/master/Tests/scripts/dev_envs/default_python3/Pipfile.lock"
     "https://raw.githubusercontent.com/demisto/content/master/Tests/scripts/dev_envs/pytest/conftest.py"
-    "https://raw.githubusercontent.com/demisto/content/master/dev-requirements-py2.txt"
-    "https://raw.githubusercontent.com/demisto/content/master/dev-requirements-py3.txt"
     "https://raw.githubusercontent.com/demisto/content/master/package.json"
     "https://raw.githubusercontent.com/demisto/content/master/package-lock.json"
 )
