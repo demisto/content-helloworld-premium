@@ -9,3 +9,6 @@ ignore=BA101
 
 [file:classifier-HelloWorldPremium.json]
 ignore=BA101
+
+[file:HelloWorldPremium.yml]
+ignore=IN154
