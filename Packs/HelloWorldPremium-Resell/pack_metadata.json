@@ -16,6 +16,7 @@
              "display_name": "HelloWorld"
          }
    },
+   "disableMonthly": true,
    "price": "100",
     "tags": [],
     "useCases": [],
