@@ -4,12 +4,3 @@ You can check the Design Document of this integration [here](https://docs.google
 Please make sure you look at the integration source code and comments.
 
 This integration was built to interact with the sample SOAR Hello World Premium API To check the API source code go to [GitHub](https://github.com/fvigo/soarhelloworld).
-
-
-HelloWorldPremium Alert:
-
-![Setup Account](https://github.com/demisto/content-helloworld-premium/blob/master/Packs/HelloWorldPremium/doc_files/Handle_Hello_World_Premium_Alert.png?raw=true)
-
-HelloWorldPremium Scan:
-
-![Setup Account](https://github.com/demisto/content-helloworld-premium/blob/master/Packs/HelloWorldPremium/doc_files/HelloWorldPremium_Scan.png?raw=true)
